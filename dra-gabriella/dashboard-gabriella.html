@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dra. Gabriella Gouveia · Relatório de desempenho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#f3f6fb; --panel:#ffffff; --ink:#15233b; --muted:#66748b; --line:#e3e9f2;
+  --navy:#4B3A33; --meta:#2563eb; --untr:#f59e0b; --ok:#10b981; --bad:#e11d48; --soft:#eef3fb;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1522; --panel:#162033; --ink:#e7edf7; --muted:#9aa8bf; --line:#26324a; --soft:#1c2940; --navy:#CDB5A3;
+  }
+}
+:root[data-theme="dark"]{--bg:#0e1522;--panel:#162033;--ink:#e7edf7;--muted:#9aa8bf;--line:#26324a;--soft:#1c2940;--navy:#CDB5A3;}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header.top{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+h1{font-size:28px;margin:0;font-weight:800;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:14px}
+.tabs{display:flex;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.tabs button{border:0;background:transparent;color:var(--muted);font:600 14px 'Manrope',sans-serif;padding:9px 16px;border-radius:9px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--navy);color:#fff}
+:root[data-theme="dark"] .tabs button[aria-pressed="true"]{color:#0e1522}
+button:focus-visible,label:focus-within{outline:2px solid var(--meta);outline-offset:2px}
+.period{font-size:13px;color:var(--muted);margin-top:4px}
+h2{font-size:19px;margin:34px 0 14px;font-weight:800}
+h2 small{font-weight:500;color:var(--muted);font-size:13px;margin-left:8px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.hero{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hero .k{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;border-top:4px solid var(--navy)}
+.hero .k:nth-child(2){border-top-color:var(--meta)}
+.hero .k:nth-child(3){border-top-color:var(--ok)}
+.hero .k:nth-child(4){border-top-color:var(--untr)}
+.k .v{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.k .l{color:var(--muted);font-size:13px;font-weight:600}
+.k .d{font-size:12px;color:var(--muted);margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chips label{display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer}
+.chips input{accent-color:var(--meta)}
+.grid-m{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.m{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.m .v{font-size:21px;font-weight:800}
+.m .l{font-size:12.5px;color:var(--muted);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.three{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:14px}
+.ptitle{font-weight:700;margin:0 0 12px;font-size:15px}
+.chartbox{position:relative;height:250px}
+.funnel .row{display:grid;grid-template-columns:150px 1fr 60px;align-items:center;gap:10px;margin:8px 0;font-size:13.5px}
+.bar{height:22px;background:var(--soft);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--meta);border-radius:6px}
+.funnel .row.sale .bar i{background:var(--ok)}
+.funnel .row.wait .bar i{background:var(--untr)}
+.funnel .n{text-align:right;font-weight:700}
+.note{font-size:12.5px;color:var(--muted);margin-top:10px}
+.alert{border-left:4px solid var(--bad);background:var(--panel);border-radius:10px;padding:14px 16px;border:1px solid var(--line);border-left-width:4px;border-left-color:var(--bad)}
+.alert b{display:block;margin-bottom:2px}
+.alerts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.conv{display:grid;gap:10px}
+.c{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:12px}
+.dot{width:12px;height:12px;border-radius:50%;margin-top:6px}
+.dot.good{background:var(--ok)} .dot.mid{background:var(--untr)} .dot.bad{background:var(--bad)}
+.c h4{margin:0 0 2px;font-size:14.5px}
+.c p{margin:0;font-size:13.5px;color:var(--muted)}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--soft);color:var(--ink);margin-left:6px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:700;font-size:12.5px}
+.scroll{overflow-x:auto}
+footer{margin-top:40px;font-size:12px;color:var(--muted)}
+@media (max-width:900px){.hero{grid-template-columns:repeat(2,1fr)}.two,.three,.alerts{grid-template-columns:1fr}}
+@media (max-width:480px){.hero .k .v{font-size:24px}.funnel .row{grid-template-columns:110px 1fr 44px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Dra. Gabriella Gouveia</h1>
+      <div class="sub">Relatório de desempenho · Meta Ads e atendimento (Tintim) · Ideal Tráfego Pago</div>
+      <div class="period" id="periodLabel"></div>
+    </div>
+    <div class="tabs" role="group" aria-label="Período">
+      <button data-p="tri" aria-pressed="true">Jul a Set</button>
+      <button data-p="ago" aria-pressed="false">Agosto</button>
+      <button data-p="set" aria-pressed="false">Setembro</button>
+    </div>
+  </header>
+
+  <h2>Parte 1 · Anúncios no Meta</h2>
+  <div class="hero" id="hero"></div>
+
+  <div class="chips" id="chips" aria-label="Métricas exibidas"></div>
+  <div class="grid-m" id="metrics"></div>
+
+  <div class="three" style="margin-top:14px">
+    <div class="panel"><p class="ptitle">Evolução entre períodos</p>
+      <label class="sub" style="display:flex;gap:8px;align-items:center;margin-bottom:8px">Métrica
+        <select id="cmpSel" style="font:600 13px Manrope,sans-serif;padding:4px 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink)"></select>
+      </label>
+      <div class="chartbox"><canvas id="cmpChart"></canvas></div>
+      <p class="note">Jul a Set mostra o total dos 3 meses; agosto e setembro são mensais.</p>
+    </div>
+    <div class="panel"><p class="ptitle">Mensagens por gênero</p><div class="chartbox"><canvas id="genChart"></canvas></div></div>
+    <div class="panel"><p class="ptitle">Top anúncios do período</p><div class="scroll"><table id="adsTable"></table></div></div>
+  </div>
+
+  <h2>Parte 2 · Atendimento e vendas <small>fonte: painel Tintim</small></h2>
+  <div class="hero" id="hero2"></div>
+
+  <div class="three" style="margin-top:14px">
+    <div class="panel"><p class="ptitle">Conversas rastreadas e não rastreadas</p><div class="chartbox"><canvas id="trkChart"></canvas></div>
+      <p class="note" id="trkNote"></p></div>
+    <div class="panel funnel"><p class="ptitle">Onde as conversas estão hoje</p><div id="funnel"></div>
+      <p class="note">Etapa atual de cada conversa iniciada no período, como está marcada hoje no Tintim.</p></div>
+    <div class="panel"><p class="ptitle">Resultado comercial</p>
+      <div class="grid-m" id="sales" style="grid-template-columns:1fr 1fr"></div>
+      <p class="note">Vendas contadas pela data em que a etapa de venda foi marcada, como no painel Tintim. O valor das vendas não está sendo preenchido.</p></div>
+  </div>
+
+  <h2>Pontos de atenção</h2>
+  <div class="alerts">
+    <div class="alert"><b>Etapas sem atualização</b>284 das 300 conversas (95%) continuam em "Fez Contato" e nenhum agendamento foi marcado no Tintim. Sem isso o funil real fica escondido e o Tintim não devolve as vendas ao Meta.</div>
+    <div class="alert"><b>Primeira resposta demorada</b>Muita gente chama de madrugada ou cedo e só recebe resposta da equipe à tarde: de 10 a 23 horas nas conversas lidas. Hoje 7 conversas aguardam a primeira resposta, uma delas desde 27/09.</div>
+    <div class="alert"><b>Setembro mais caro e com buraco</b>Custo por mensagem subiu de R$ 5,93 para R$ 10,28, com CPM de R$ 15,49 no período eleitoral. De 13 a 17/09 nenhuma conversa chegou ao Tintim, nem das diretas: vale checar se o WhatsApp ficou desconectado.</div>
+  </div>
+
+  <h2>Análise de conversas <small id="convCount"></small></h2>
+  <div class="conv" id="conv"></div>
+
+  <footer>Dados Meta Ads extraídos da conta CA Gabriella Gouveia e dados de atendimento do painel Tintim (conta CA Gabriella Gouveia) em 30/09/2026. Setembro até o dia 30. Custo por mensagem calculado sobre a verba das campanhas de mensagem. Seguidores contam só os ganhos atribuídos aos anúncios. O tempo de 1ª resposta é a mediana da resposta da equipe (sem contar a mensagem automática) nas conversas lidas. Jornada média de 20 dias é o valor geral da conta no Tintim.</footer>
+</div>
+
+<script>
+const D={
+ tri:{label:"01/07 a 30/09/2026",
+  meta:{inv:2801.88,ads:37,msg:272,cpmsg:7.45,reach:103086,impr:249659,cpm:11.22,cpc:1.11,ctr:1.01,freq:2.42,clicks:2523,visits:1785,follows:266},
+  gen:{f:179,m:93,u:0},
+  top:[["Facetas Vídeo 01",324.48,58],["Reconstrução · Resultados",307.30,50],["Harmonização Vídeo 01",304.97,49],["Procedimentos Vídeo 06",298.63,42],["Facetas Antes e Depois",204.88,21]],
+  t:{total:300,trk:201,untr:99,resp:"~11 horas",fez:284,duv:0,follow:15,agD:0,agE:0,real:1,desq:0,vendas:8,fat:201},
+ },
+ ago:{label:"01/08 a 31/08/2026",
+  meta:{inv:935.46,ads:15,msg:117,cpmsg:5.93,reach:51042,impr:87614,cpm:10.68,cpc:1.13,ctr:0.94,freq:1.72,clicks:825,visits:547,follows:98},
+  gen:{f:66,m:51,u:0},
+  top:[["Facetas Vídeo 01",216.78,42],["Procedimentos Vídeo 06",196.33,28],["Reconstrução · Resultados",112.87,27],["Harmonização IMG 01",67.99,5],["Depoimento",22.89,4]],
+  t:{total:126,trk:87,untr:39,resp:"~11 horas",fez:120,duv:0,follow:6,agD:0,agE:0,real:0,desq:0,vendas:0,fat:0},
+ },
+ set:{label:"01/09 a 30/09/2026",
+  meta:{inv:826.70,ads:13,msg:59,cpmsg:10.28,reach:27480,impr:53372,cpm:15.49,cpc:1.33,ctr:1.17,freq:1.94,clicks:622,visits:411,follows:75},
+  gen:{f:40,m:19,u:0},
+  top:[["Reconstrução · Resultados",194.43,23],["Harmonização Vídeo 01",74.09,12],["Facetas Vídeo 01",84.38,9],["Rejuvenesceu 10 Anos",48.71,4],["Harmonização IMG 02",68.46,4]],
+  t:{total:66,trk:37,untr:29,resp:"~12 horas",fez:62,duv:0,follow:4,agD:0,agE:0,real:0,desq:0,vendas:1,fat:0},
+ }
+};
+const CONV={
+ tri:[
+  ["good","Eva · Facetas · realizou procedimento","Chegou pelo anúncio de antes e depois. Pergunta sobre a queixa, convite para consulta, duas opções de dia, endereço e confirmação no dia do atendimento. Compareceu. Este é o roteiro a replicar."],
+  ["mid","Dalva · Facetas · Caruaru","Primeira resposta só no dia seguinte (23h depois). Depois disso a qualificação foi ótima: já tem restauração, quer refazer, cidade confirmada e convite para consulta. Ficou sem resposta e está em follow up."],
+  ["bad","Leidiane · Facetas · Caruaru","Recebeu opção de terça ou quarta, disse que não podia e perguntou se a avaliação era grátis. A resposta com o valor veio 2 dias depois, sem oferecer outro dia. Conversa encerrada."],
+  ["mid","Avelina · Prótese protocolo","Veio pelo anúncio de reconstrução, mas buscava implante. Recebeu faixa de preço (R$ 16 a 17 mil) por mensagem e convite para exames. Lead fora do foco das campanhas."]
+ ],
+ ago:[
+  ["mid","Iselda · Harmonização","Mandou vários áudios e foi atendida em 2h. Recebeu o valor da consulta (R$ 200, sem cobrança se fizer procedimento no dia) e o convite no dia seguinte, sem retorno. Essa regra é diferente da que está na página de facetas."],
+  ["bad","Leidiane · Facetas · Caruaru","Não podia nos dias oferecidos e perguntou se a avaliação era grátis. Ficou 2 dias sem resposta e não recebeu outra opção de dia."],
+  ["mid","Avelina · Prótese protocolo","Buscava implante, não faceta. Recebeu faixa de preço por mensagem. Perguntou sobre enxerto de madrugada e teve resposta 12h depois."],
+  ["mid","Follow up de 01/09","A equipe retomou de uma vez as conversas paradas de agosto com uma mensagem padrão. Boa iniciativa, mas nenhuma respondeu: vale personalizar citando o procedimento de cada uma."]
+ ],
+ set:[
+  ["bad","Juliana · Harmonização Vídeo 01","Chamou no dia 27/09 às 5h52 e não recebeu nenhuma resposta, nem a mensagem automática. Segue aguardando."],
+  ["bad","Rachel · Facetas Vídeo 01","Resposta da equipe 2h depois. Às 18h34 perguntou o valor das facetas em resina e ficou sem retorno até hoje."],
+  ["mid","Antônio · Rejuvenesceu 10 Anos","Mensagem pronta do anúncio pedindo avaliação às 5h20. Primeira resposta da equipe 12h depois, com pergunta sobre as queixas. Sem retorno."],
+  ["mid","Joseilda · Harmonização Vídeo 01","Resposta 10h45 depois. Quando ela voltou com um boa tarde, recebeu de novo \"Como posso te ajudar?\", repetindo a pergunta anterior. A conversa parou."],
+  ["mid","Dalva · Facetas · Caruaru","Primeira resposta 23h depois, mas a qualificação foi muito boa e terminou com convite para consulta. Está em follow up."],
+  ["mid","Mensagens automáticas duplicadas","Toda conversa nova recebe duas mensagens automáticas ao mesmo tempo: a de boas vindas e um \"Agradecemos sua mensagem\" genérico. Vale desligar a genérica no WhatsApp Business."]
+ ]
+};
+const METRICS=[
+ ["reach","Alcance","n"],["impr","Impressões","n"],["cpm","CPM","r"],["cpc","CPC (link)","r"],["ctr","CTR","p"],
+ ["freq","Frequência","d"],["clicks","Cliques no link","n"],["visits","Visitas ao perfil (tráfego)","n"],["follows","Seguidores via anúncios","n"]
+];
+const fmt={
+ n:v=>v.toLocaleString('pt-BR'),
+ r:v=>'R$ '+v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}),
+ p:v=>v.toLocaleString('pt-BR',{minimumFractionDigits:2})+'%',
+ d:v=>v.toLocaleString('pt-BR',{minimumFractionDigits:2}),
+ big:v=>'R$ '+v.toLocaleString('pt-BR')
+};
+let cur='tri', charts={};
+let shown;
+try{shown=JSON.parse(localStorage.getItem('ggShown'))}catch(e){}
+if(!Array.isArray(shown)) shown=METRICS.map(m=>m[0]);
+
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+function hero(){
+ const m=D[cur].meta;
+ document.getElementById('hero').innerHTML=[
+  [fmt.r(m.inv),'Valor investido'],[m.ads,'Anúncios veiculados','com impressões no período'],
+  [m.msg,'Mensagens iniciadas'],[fmt.r(m.cpmsg),'Custo por mensagem']
+ ].map(x=>`<div class="k"><div class="l">${x[1]}</div><div class="v">${x[0]}</div>${x[2]?`<div class="d">${x[2]}</div>`:''}</div>`).join('');
+ const t=D[cur].t;
+ document.getElementById('hero2').innerHTML=[
+  [t.total,'Conversas no WhatsApp'],[t.trk,'Rastreadas (Meta)'],[t.resp,'1ª resposta da equipe'],[t.vendas,'Vendas marcadas']
+ ].map(x=>`<div class="k"><div class="l">${x[1]}</div><div class="v">${x[0]}</div></div>`).join('');
+}
+function chips(){
+ document.getElementById('chips').innerHTML=METRICS.map(([k,l])=>
+  `<label><input type="checkbox" data-k="${k}" ${shown.includes(k)?'checked':''}> ${l}</label>`).join('');
+ document.querySelectorAll('#chips input').forEach(i=>i.onchange=()=>{
+  shown=[...document.querySelectorAll('#chips input:checked')].map(x=>x.dataset.k);
+  try{localStorage.setItem('ggShown',JSON.stringify(shown))}catch(e){}
+  metrics();
+ });
+}
+function metrics(){
+ const m=D[cur].meta;
+ document.getElementById('metrics').innerHTML=METRICS.filter(x=>shown.includes(x[0]))
+  .map(([k,l,f])=>`<div class="m"><div class="l">${l}</div><div class="v">${fmt[f](m[k])}</div></div>`).join('');
+}
+const CMP=[["inv","Valor investido","r"],["msg","Mensagens","n"],["cpmsg","Custo por mensagem","r"],["ads","Anúncios veiculados","n"],...METRICS];
+function cmp(){
+ const sel=document.getElementById('cmpSel');
+ if(!sel.options.length){sel.innerHTML=CMP.map(c=>`<option value="${c[0]}">${c[1]}</option>`).join('');sel.value='cpmsg';sel.onchange=cmp;}
+ const k=sel.value, f=CMP.find(c=>c[0]===k)[2];
+ const vals=['tri','ago','set'].map(p=>D[p].meta[k]);
+ charts.cmp&&charts.cmp.destroy();
+ charts.cmp=new Chart(document.getElementById('cmpChart'),{type:'bar',
+  data:{labels:['Jul a Set','Agosto','Setembro'],datasets:[{data:vals,backgroundColor:['#4B3A33','#8C6E60','#CDB5A3'],borderRadius:6}]},
+  options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt[f](c.raw)}}},
+   scales:{y:{ticks:{color:css('--muted')},grid:{color:css('--line')}},x:{ticks:{color:css('--muted')},grid:{display:false}}}}});
+}
+function gen(){
+ const g=D[cur].gen;
+ charts.gen&&charts.gen.destroy();
+ charts.gen=new Chart(document.getElementById('genChart'),{type:'pie',
+  data:{labels:['Mulheres','Homens','Não informado'],datasets:[{data:[g.f,g.m,g.u],backgroundColor:['#f472b6','#2563eb','#94a3b8'],borderColor:css('--panel')}]},
+  options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:css('--ink')}}}}});
+}
+function ads(){
+ document.getElementById('adsTable').innerHTML='<tr><th>Anúncio</th><th>Msgs</th><th>Custo/msg</th></tr>'+
+  D[cur].top.map(a=>`<tr><td>${a[0]}</td><td>${a[2]}</td><td>${fmt.r(a[1]/a[2])}</td></tr>`).join('');
+}
+function trk(){
+ const t=D[cur].t;
+ charts.trk&&charts.trk.destroy();
+ charts.trk=new Chart(document.getElementById('trkChart'),{type:'doughnut',
+  data:{labels:['Rastreadas (Meta)','Não rastreadas'],datasets:[{data:[t.trk,t.untr],backgroundColor:['#10b981','#f59e0b'],borderColor:css('--panel')}]},
+  options:{maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{color:css('--ink')}}}}});
+ const pct=(t.trk/t.total*100).toFixed(1).replace('.',',');
+ document.getElementById('trkNote').textContent=`${pct}% das ${t.total} conversas chegaram rastreadas. O Meta reportou ${D[cur].meta.msg} mensagens no mesmo período.`;
+}
+function funnel(){
+ const t=D[cur].t;
+ const rows=[["Fez contato",t.fez,""],["Tirou dúvidas",t.duv,""],["Follow up",t.follow,"wait"],["Agendou dental",t.agD,""],["Agendou estético",t.agE,""],["Realizou procedimento",t.real,"sale"],["Desqualificados",t.desq,""]];
+ const max=Math.max(...rows.map(r=>r[1]),1);
+ document.getElementById('funnel').innerHTML=rows.map(r=>
+  `<div class="row ${r[2]}"><span>${r[0]}</span><div class="bar"><i style="width:${r[1]/max*100}%"></i></div><span class="n">${r[1]}</span></div>`).join('');
+}
+function sales(){
+ const t=D[cur].t, m=D[cur].meta;
+  document.getElementById('sales').innerHTML=[
+  [t.vendas,'Vendas marcadas'],[t.fat?fmt.big(t.fat):'Não preenchido','Faturamento'],
+  [m.msg?fmt.r(m.inv/Math.max(t.trk,1)):'—','Investimento por conversa rastreada'],[(t.follow)+' em follow up','Conversas retomadas'],
+  ['20 dias','Jornada média'],[7,'Aguardando 1ª resposta hoje']
+ ].map(x=>`<div class="m"><div class="l">${x[1]}</div><div class="v">${x[0]}</div></div>`).join('');
+}
+function conv(){
+ const c=CONV[cur];
+ document.getElementById('convCount').textContent=`${c.length} conversas lidas no período`;
+ const tag={good:'avançou',mid:'atenção',bad:'perdido'};
+ document.getElementById('conv').innerHTML=c.map(x=>
+  `<div class="c"><span class="dot ${x[0]}"></span><div><h4>${x[1]}<span class="tag">${tag[x[0]]}</span></h4><p>${x[2]}</p></div></div>`).join('');
+}
+function render(){
+ document.getElementById('periodLabel').textContent='Período: '+D[cur].label;
+ hero();metrics();cmp();gen();ads();trk();funnel();sales();conv();
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+ cur=b.dataset.p;
+ document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+ render();
+});
+chips();render();
+</script>
+</body>
+</html>
