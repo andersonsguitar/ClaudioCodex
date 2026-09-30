@@ -1,0 +1,627 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ===== LP FACETAS EM RESINA · DRA. GABRIELLA GOUVEIA ===== -->
+<!-- Cole tudo isto num bloco "HTML personalizado" (Gutenberg) ou widget HTML (Elementor). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+.gg{--cacau:#4B3A33;--terra:#6E5549;--champ:#CDB5A3;--rose:#EADFD8;--nude:#F6F0EB;--branco:#FFFDFB;--erro:#A23B2A;
+  width:100vw;margin-left:calc(50% - 50vw);background:var(--nude);color:var(--cacau);
+  font-family:'Montserrat',system-ui,sans-serif;font-size:17px;line-height:1.7;overflow:hidden;-webkit-font-smoothing:antialiased}
+.gg *,.gg *::before,.gg *::after{box-sizing:border-box;margin:0;padding:0}
+.gg img{display:block;max-width:100%;height:auto;border:0}
+.gg h1,.gg h2,.gg h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;color:var(--cacau);letter-spacing:0;line-height:1.08}
+.gg p{margin:0}
+.gg a{color:inherit}
+.gg .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.gg .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 30px;border-radius:999px;
+  background:var(--cacau);color:var(--branco);font:500 15px/1 'Montserrat',sans-serif;letter-spacing:.02em;text-decoration:none;border:0;cursor:pointer;transition:background .2s}
+.gg .btn:hover{background:var(--terra)}
+.gg :focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+
+/* topo */
+.gg .hero{display:grid;grid-template-columns:1fr;background:var(--rose)}
+.gg .hero-foto{position:relative;height:36vh;min-height:252px;max-height:420px;overflow:hidden;border-bottom-right-radius:46% 90px}
+.gg .hero-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 16%}
+.gg .hero-foto .hero-logo{display:block;position:absolute;top:18px;left:16px;width:min(112px,28vw);height:auto;object-fit:contain;opacity:.82}
+.gg .hero-txt{padding:24px 22px 48px;display:flex;flex-direction:column;align-items:flex-start}
+.gg .hero-txt .btn{order:4;margin-top:6px}.gg .hero-txt .sub2{order:5;margin:22px 0 0}.gg .hero-chamada{display:none}.gg .hero-nota{order:6}
+.gg .hero-local{font-size:18px;font-weight:500;color:var(--terra);margin-bottom:12px;letter-spacing:.01em;line-height:1.35}
+.gg .hero h1{font-size:clamp(40px,10.5vw,82px);margin-bottom:16px}
+.gg .hero-sub{font-size:17px;max-width:30em;margin-bottom:14px}
+.gg .hero-chamada{font-size:17px;font-weight:500;max-width:30em;margin:22px 0 18px}
+.gg .hero-nota{font-size:14px;color:var(--terra);margin-top:14px}
+
+/* identificação */
+.gg .ident{padding:84px 0 70px}
+.gg .ident h2{font-size:clamp(34px,7vw,52px);max-width:14em;margin-bottom:24px}
+.gg .ident p{max-width:34em;margin-bottom:16px}
+.gg .ident .fecho{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;line-height:1.3;margin-top:26px;color:var(--terra)}
+
+/* comparador */
+.gg .result{background:var(--cacau);color:var(--nude);padding:78px 0 84px}
+.gg .result{text-align:center}.gg .result h2{color:var(--nude);font-size:clamp(34px,7vw,56px);margin:0 auto 14px;max-width:16em}
+.gg .result .intro{max-width:32em;color:#E6D9CF;margin:0 auto 34px}
+.gg .casos{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:22px}
+.gg .casos button{font:500 14px/1 'Montserrat',sans-serif;color:var(--nude);background:transparent;border:1px solid rgba(246,240,235,.35);border-radius:999px;padding:11px 16px;cursor:pointer}
+.gg .casos button[aria-pressed="true"]{background:var(--nude);color:var(--cacau);border-color:var(--nude)}
+.gg .comp{position:relative;width:100%;max-width:760px;margin:0 auto;border-radius:18px;overflow:hidden;background:#3a2d27;touch-action:pan-y;user-select:none}
+.gg .comp img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.gg .comp .antes{clip-path:inset(0 50% 0 0)}
+.gg .comp .linha{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--nude);transform:translateX(-1px);pointer-events:none}
+.gg .comp .puxador{position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:var(--nude);display:flex;align-items:center;justify-content:center;pointer-events:none}
+.gg .comp .puxador svg{width:22px;height:22px}
+.gg .comp .rot{position:absolute;bottom:14px;font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--cacau);background:rgba(246,240,235,.88);padding:6px 11px;border-radius:999px;pointer-events:none}
+.gg .comp .rot.a{left:14px}.gg .comp .rot.d{right:14px}
+.gg .comp{cursor:ew-resize;-webkit-user-select:none;-webkit-touch-callout:none}
+.gg .comp img{pointer-events:none;-webkit-user-drag:none}
+.gg .comp input[type=range]{position:absolute;left:0;bottom:0;width:100%;height:1px;opacity:0;margin:0;pointer-events:none}
+.gg .comp:focus-within .puxador{box-shadow:0 0 0 3px var(--terra)}
+.gg .legenda{margin:18px auto 0;max-width:34em;color:#E6D9CF;font-size:16px}
+.gg .dica{font-size:14px;color:var(--champ);margin-top:6px}
+.gg .result.claro{background:var(--branco);color:var(--cacau)}
+.gg .result.claro h2{color:var(--cacau)}
+.gg .result.claro .intro,.gg .result.claro .legenda{color:var(--terra)}
+.gg .result.claro .dica{color:var(--terra)}
+.gg .result.claro .comp .linha{background:var(--branco)}
+.gg .result .cta-sec{margin-top:30px}
+.gg .result:not(.claro) .cta-sec{background:var(--nude);color:var(--cacau)}
+
+/* como funciona */
+.gg .passos{padding:84px 0}
+.gg .passos h2{font-size:clamp(34px,7vw,52px);margin-bottom:40px}
+.gg .passos ol{list-style:none;display:grid;gap:0;counter-reset:p}
+.gg .passos li{counter-increment:p;display:grid;grid-template-columns:64px 1fr;gap:6px 14px;padding:22px 0;border-top:1px solid var(--champ)}
+.gg .passos li:last-child{border-bottom:1px solid var(--champ)}
+.gg .passos li::before{content:counter(p);grid-row:span 2;font-family:'Cormorant Garamond',serif;font-size:46px;line-height:.9;color:var(--champ)}
+.gg .passos h3{font-size:28px}
+.gg .passos li p{max-width:34em}
+
+/* natural */
+.gg .natural{background:var(--rose);padding:84px 0}
+.gg .natural-grid{display:grid;gap:40px}
+.gg .natural-foto{border-radius:18px 18px 46% 18px;overflow:hidden;aspect-ratio:1/1.05}
+.gg .natural-foto img{width:100%;height:100%;object-fit:cover}
+.gg .natural h2{font-size:clamp(34px,7vw,52px);margin-bottom:26px}
+.gg .pilar{padding:18px 0;border-top:1px solid var(--champ)}
+.gg .pilar h3{font-size:26px;margin-bottom:6px}
+
+/* sobre */
+.gg .sobre{padding:84px 0}
+.gg .sobre-grid{display:grid;gap:36px;align-items:center}
+.gg .sobre-foto{border-radius:46% 18px 18px 18px;overflow:hidden;aspect-ratio:1/1}
+.gg .sobre-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.gg .sobre h2{font-size:clamp(36px,7vw,54px);margin-bottom:6px}
+.gg .cro{font-size:15px;color:var(--terra);margin-bottom:20px}
+.gg .sobre p+p{margin-top:14px}
+
+/* faq */
+.gg .faq{background:var(--branco);padding:84px 0}
+.gg .faq h2{font-size:clamp(34px,7vw,52px);margin-bottom:30px}
+.gg details{border-top:1px solid var(--champ)}
+.gg details:last-of-type{border-bottom:1px solid var(--champ)}
+.gg summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;font-weight:500;font-size:18px;line-height:1.4}
+.gg summary::-webkit-details-marker{display:none}
+.gg summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1.5px solid var(--terra);border-bottom:1.5px solid var(--terra);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.gg details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.gg details p{padding:0 0 22px;max-width:40em}
+
+/* formulário */
+.gg .agendar{background:var(--cacau);padding:84px 0 110px}
+.gg .form-box{background:var(--nude);border-radius:22px;padding:34px 22px;max-width:560px;margin:0 auto}
+.gg .form-box h2{font-size:clamp(32px,7vw,46px);margin-bottom:10px}
+.gg .form-box .intro{font-size:16px;color:var(--terra);margin-bottom:26px}
+.gg .campo{margin-bottom:18px}
+.gg label.rt,.gg .rt{display:block;font-size:15px;font-weight:500;margin-bottom:7px}
+.gg input[type=text],.gg input[type=tel],.gg select{width:100%;height:52px;border:1px solid var(--champ);border-radius:12px;background:var(--branco);padding:0 16px;font:400 16px 'Montserrat',sans-serif;color:var(--cacau);-webkit-appearance:none;appearance:none}
+.gg select{background-image:linear-gradient(45deg,transparent 50%,var(--terra) 50%),linear-gradient(135deg,var(--terra) 50%,transparent 50%);background-position:calc(100% - 22px) 23px,calc(100% - 16px) 23px;background-size:6px 6px;background-repeat:no-repeat}
+.gg input:focus,.gg select:focus{border-color:var(--terra);outline:none;box-shadow:0 0 0 3px rgba(110,85,73,.18)}
+.gg .cidades{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gg .cidades input{position:absolute;opacity:0;pointer-events:none}
+.gg .cidades label{display:flex;align-items:center;justify-content:center;height:52px;border:1px solid var(--champ);border-radius:12px;background:var(--branco);cursor:pointer;font-size:15px}
+.gg .cidades input:checked+label{background:var(--cacau);color:var(--branco);border-color:var(--cacau)}
+.gg .cidades input:focus-visible+label{outline:2px solid var(--terra);outline-offset:2px}
+.gg .erro{display:none;color:var(--erro);font-size:14px;margin-top:6px}
+.gg .campo.invalido .erro{display:block}
+.gg .campo.invalido input,.gg .campo.invalido select,.gg .campo.invalido .cidades label{border-color:var(--erro)}
+.gg .form-box .btn{width:100%;margin-top:8px}
+.gg .privac{font-size:13px;color:var(--terra);margin-top:14px;text-align:center}
+.gg .rodape{background:var(--cacau);color:#CDBDB2;text-align:center;font-size:14px;padding:0 22px 40px}
+.gg .rodape{padding-top:36px}
+
+/* whatsapp flutuante */
+.gg .zap{position:fixed;right:18px;bottom:18px;z-index:9999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+.gg .zap svg{width:32px;height:32px;fill:#fff}
+
+
+/* depoimentos */
+.gg .depos{background:var(--rose);padding:84px 0}
+.gg .depos h2{font-size:clamp(34px,7vw,52px);text-align:center;margin:0 auto 40px;max-width:14em}
+.gg .depo-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px}
+.gg .depo-track::-webkit-scrollbar{display:none}
+.gg .depo{flex:0 0 100%;scroll-snap-align:start;background:var(--branco);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column;gap:22px;min-width:0}
+.gg .depo.rascunho{border:1.5px dashed var(--terra);background:#FBF7F4}
+.gg .depo.rascunho blockquote{color:var(--terra)}
+.gg .depo blockquote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.45;color:var(--cacau);margin:0}
+.gg .depo-quem{display:flex;align-items:center;flex-wrap:wrap;gap:12px 14px;margin-top:auto}
+.gg .depo-quem>div{min-width:0}
+.gg .depo-quem img,.gg .depo-ini{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none}
+.gg .depo-ini{display:flex;align-items:center;justify-content:center;background:var(--rose);color:var(--terra);font:500 18px 'Montserrat',sans-serif}
+.gg .depo-nome{font-weight:600;font-size:16px;line-height:1.3}
+.gg .depo-arroba{font-size:14px;color:var(--terra);overflow-wrap:anywhere}
+.gg .estrelas{display:flex;gap:3px;margin-left:auto}
+.gg .estrelas svg{width:16px;height:16px;fill:#B8924A}
+.gg .depo-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px}
+.gg .depo-ctrl button.seta{width:44px;height:44px;border-radius:50%;border:1px solid var(--terra);background:transparent;color:var(--cacau);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gg .depo-ctrl button.seta svg{width:18px;height:18px}
+.gg .depo-dots{display:flex;gap:8px}
+.gg .depo-dots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--champ);cursor:pointer;padding:0}
+.gg .depo-dots button[aria-current="true"]{background:var(--cacau);width:24px;border-radius:999px}
+@media (min-width:880px){.gg .depo{flex-basis:calc(50% - 10px)}}
+@media (min-width:880px){
+  .gg .hero{grid-template-columns:1.05fr .95fr;min-height:640px}
+  .gg .hero-txt{order:1;align-self:center;padding:60px 48px 60px max(22px,calc((100vw - 1120px)/2 + 22px))}
+  .gg .hero-foto{order:2;height:100%;max-height:none;border-bottom-right-radius:0;border-bottom-left-radius:220px 100%}
+  .gg .hero-txt .btn,.gg .hero-txt .sub2,.gg .hero-nota{order:0}.gg .hero-txt .sub2{margin:0 0 14px}.gg .hero-chamada{display:block}
+  .gg .hero-foto .hero-logo{left:auto;right:36px;top:32px;width:220px;opacity:.9}
+  .gg .natural-grid{grid-template-columns:.9fr 1.1fr;align-items:center;gap:64px}
+  .gg .sobre-grid{grid-template-columns:.8fr 1.2fr;gap:64px}
+  .gg .form-box{padding:46px 44px}
+  .gg .ident .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+  .gg .passos ol{grid-template-columns:1fr 1fr;column-gap:48px}
+  .gg .passos li:nth-last-child(2){border-bottom:1px solid var(--champ)}
+}
+
+.gg h1 strong,.gg h2 strong{font-weight:600}
+.gg p strong{font-weight:600}
+.gg .fecho strong{font-weight:600;color:var(--cacau)}
+.gg .result:not(.claro) h2 strong{color:var(--branco)}
+.gg .passos h3{font-weight:600;font-size:30px;color:var(--cacau)}
+.gg h3{font-weight:600;color:var(--cacau)}
+.gg .pilar h3{font-size:28px}
+.gg summary{font-weight:600}
+.gg .depo-nome{font-weight:700}
+.gg .passos li::before{color:var(--terra)}
+
+/* redes */
+.gg .redes{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.gg .redes a{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border:1px solid var(--terra);border-radius:999px;text-decoration:none;font-size:15px;font-weight:500;color:var(--cacau)}
+.gg .redes a:hover{background:var(--rose)}
+.gg .redes svg{width:20px;height:20px}
+.gg .rodape .redes{justify-content:center;margin:0 0 16px}
+.gg .rodape .redes a{color:var(--nude);border-color:rgba(246,240,235,.4)}
+.gg .rodape .redes a:hover{background:rgba(246,240,235,.08)}
+.gg .nota-legal{font-size:13px;color:var(--champ);margin-top:18px}
+.gg .rodape .nota-legal{margin:14px auto 0;max-width:36em;color:#B9A89C}
+.gg .logo-bloco{display:flex;flex-direction:column;align-items:center;margin:0 auto 18px}.gg .logo-bloco img{width:min(300px,78vw);height:auto;margin:0 auto}.gg .logo-tag{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;margin-top:10px;padding-left:.34em}
+.gg .rodape .logo-tag{color:var(--nude)}
+.gg .hero-local strong{font-weight:700;color:var(--cacau)}
+
+/* consultório */
+.gg .consultorio{background:var(--rose);padding:84px 0}
+.gg .consultorio h2{font-size:clamp(34px,7vw,52px);text-align:center;margin-bottom:12px}
+.gg .consultorio .intro{text-align:center;max-width:30em;margin:0 auto 34px;color:var(--terra)}
+.gg .cons-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gg .cons-foto{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--champ)}
+.gg .cons-foto img{width:100%;height:100%;object-fit:cover}
+.gg .cons-foto:nth-child(1){border-top-left-radius:46% 30%}
+.gg .cons-foto:nth-child(4){border-bottom-right-radius:46% 30%}
+@media (min-width:880px){.gg .cons-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+
+/* celular: tudo centralizado */
+@media (max-width:879px){
+  .gg .hero-txt{align-items:center;text-align:center}
+  .gg .hero-sub,.gg .hero-chamada{margin-left:auto;margin-right:auto}
+  .gg .ident,.gg .passos,.gg .natural,.gg .sobre,.gg .faq h2,.gg .depos{text-align:center}
+  .gg .ident h2,.gg .ident p{margin-left:auto;margin-right:auto}
+  .gg .passos li{display:block;text-align:center;padding:24px 0}
+  .gg .passos li::before{display:block;margin-bottom:6px}
+  .gg .passos li p{margin:0 auto}
+  .gg .pilar p{max-width:30em;margin:0 auto}
+  .gg .sobre .redes{justify-content:center}
+  .gg summary{text-align:center;padding:20px 32px}
+  .gg summary::after{right:4px}
+  .gg details p{text-align:center;margin:0 auto}
+  .gg .depo{align-items:center;text-align:center}
+  .gg .depo-quem{flex-direction:column;justify-content:center;gap:8px}
+  .gg .estrelas{margin-left:0}
+  .gg .form-box h2,.gg .form-box .intro{text-align:center}
+  .gg .form-box .btn{margin-left:auto;margin-right:auto}
+}
+@media (prefers-reduced-motion:reduce){.gg *{transition:none!important}}
+</style>
+
+<div class="gg">
+
+  <!-- TOPO -->
+  <section class="hero">
+    <div class="hero-foto">
+      <img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-dra-hero.webp" alt="Dra. Gabriella Gouveia" width="1400" height="1875" fetchpriority="high">
+      <img class="hero-logo" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-logo-nome-escura.png" alt="Dra. Gabriella Gouveia" width="883" height="64">
+    </div>
+    <div class="hero-txt">
+      <p class="hero-local"><strong>Facetas em resina</strong> em Caruaru e Garanhuns</p>
+      <h1>Um <strong>sorriso bonito</strong> que parece seu.</h1>
+      <p class="hero-sub">Facetas em resina planejadas de forma individual, considerando seus traços, proporções e características do seu sorriso.</p>
+      <p class="hero-sub sub2">O objetivo? Valorizar o seu sorriso com um resultado natural, harmônico e que respeite a sua identidade.</p>
+      <p class="hero-chamada">Conheça o planejamento para transformar o seu sorriso.</p>
+      <a class="btn" href="#agendar" data-cta="topo">Quero agendar minha avaliação</a>
+      <p class="hero-nota">Dra. Gabriella Gouveia · CRO/PE 21654</p>
+    </div>
+  </section>
+
+  <!-- IDENTIFICAÇÃO -->
+  <section class="ident">
+    <div class="wrap">
+      <h2>Você <strong>evita sorrir</strong> em foto? <strong>Cobre a boca</strong> quando ri?</h2>
+      <div>
+        <p>Dentes <strong>manchados, desgastados, com as pontas quebradas, espaços ou formatos diferentes</strong> pesam mais do que parece. Afetam a <strong>forma como você se vê</strong> e como se mostra.</p>
+        <p class="fecho"><strong>Isso tem solução.</strong> E ela não precisa parecer artificial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES E DEPOIS -->
+  <section class="result" id="resultados">
+    <div class="wrap">
+      <h2>Resultados reais de pacientes da Dra. Gabriella</h2>
+      <p class="intro">Cada sorriso aqui foi planejado de forma individual. Nenhum é igual ao outro, porque nenhum rosto é igual ao outro.</p>
+
+      <div class="casos" role="group" aria-label="Escolha o ângulo">
+        <button type="button" data-a="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso1-frente-antes.webp" data-d="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso1-frente-depois.webp" data-t="Formato e proporção redesenhados para combinar com o rosto dela." aria-pressed="true">De frente</button>
+        <button type="button" data-a="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso1-perfil-antes.webp" data-d="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso1-perfil-depois.webp" data-t="O mesmo caso de perfil. O sorriso acompanha o rosto em todos os ângulos." aria-pressed="false">De perfil</button>
+      </div>
+      <div class="comp" style="aspect-ratio:1200/1499;max-width:560px">
+        <img class="depois" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso1-frente-depois.webp" alt="Depois: facetas em resina, caso 1" loading="lazy">
+        <img class="antes" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso1-frente-antes.webp" alt="Antes: facetas em resina, caso 1" loading="lazy">
+        <span class="linha"></span>
+        <span class="puxador" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#4B3A33" stroke-width="1.6"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        <span class="rot a">ANTES</span><span class="rot d">DEPOIS</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois">
+      </div>
+      <p class="legenda">Formato e proporção redesenhados para combinar com o rosto dela.</p>
+      <p class="dica">Arraste para os lados e compare.</p>
+    </div>
+  </section>
+
+  <!-- CASO 2 -->
+  <section class="result claro">
+    <div class="wrap">
+      <h2>Cor e forma renovadas, sem perder a naturalidade</h2>
+      <p class="intro">Dentes com <strong>manchas, desgaste e tons diferentes</strong> entre si ganharam uniformidade, mantendo a textura de dente de verdade.</p>
+      <div class="comp" style="aspect-ratio:1500/936;max-width:760px">
+        <img class="depois" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso2-depois.webp" alt="Depois: facetas em resina, caso 2" loading="lazy">
+        <img class="antes" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso2-antes.webp" alt="Antes: facetas em resina, caso 2" loading="lazy">
+        <span class="linha"></span>
+        <span class="puxador" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#4B3A33" stroke-width="1.6"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        <span class="rot a">ANTES</span><span class="rot d">DEPOIS</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois">
+      </div>
+      <p class="dica">Arraste para os lados e compare.</p>
+      <a class="btn cta-sec" href="#agendar" data-cta="caso2">Quero agendar minha avaliação</a>
+    </div>
+  </section>
+
+  <!-- RETRABALHO -->
+  <section class="result">
+    <div class="wrap">
+      <h2>Já tem facetas e <strong>não gostou do resultado?</strong></h2>
+      <p class="intro">Neste retrabalho, facetas antigas foram substituídas por um novo planejamento, com uma anatomia mais leve, delicada e proporcional ao sorriso.</p>
+      <div class="comp" style="aspect-ratio:1500/934;max-width:760px">
+        <img class="depois" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso3-depois.webp" alt="Depois: retrabalho de facetas em resina" loading="lazy">
+        <img class="antes" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-caso3-antes.webp" alt="Antes: retrabalho de facetas em resina" loading="lazy">
+        <span class="linha"></span>
+        <span class="puxador" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#4B3A33" stroke-width="1.6"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+        <span class="rot a">ANTES</span><span class="rot d">DEPOIS</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois">
+      </div>
+      <p class="dica">Arraste para os lados e compare.</p>
+      <a class="btn cta-sec" href="#agendar" data-cta="retrabalho">Quero avaliar meu caso</a>
+      <p class="nota-legal">Imagens publicadas com autorização das pacientes. Os resultados variam de acordo com cada caso.</p>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depos">
+    <div class="wrap">
+      <h2>Quem já fez conta como foi</h2>
+      <div class="depo-track" id="depoTrack" aria-roledescription="carrossel" aria-label="Depoimentos de pacientes">
+        <figure class="depo">
+          <blockquote>“Através de você consegui realizar um sonho e você fez melhor do que eu poderia imaginar. Te agradeço pela paciência, dedicação e profissionalismo nessa transformação. Agora posso voltar a sorrir com a certeza que meus dentes estão lindos. Gratidão a Deus por me permitir sonhar e realizar esse sonho através das suas mãos, que pra mim foi muito especial, pois me trouxe tranquilidade, segurança e a certeza de estar sendo cuidada pela melhor profissional.”</blockquote>
+          <figcaption class="depo-quem">
+            <img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-depo-patricia.webp" alt="Patricia Dias" width="240" height="240" loading="lazy">
+            <div><p class="depo-nome">Patricia Dias</p><p class="depo-arroba">@patriciadiasoliveira6611</p></div>
+            <span class="estrelas" role="img" aria-label="5 estrelas"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+          </figcaption>
+        </figure>
+        <!-- RASCUNHO: substitua pelo depoimento real (texto, nome, @ e foto) e remova a classe "rascunho" -->
+        <figure class="depo rascunho">
+          <blockquote>“Espaço para o depoimento real de uma paciente. Substitua este texto antes de publicar a página.”</blockquote>
+          <figcaption class="depo-quem">
+            <span class="depo-ini" aria-hidden="true">P2</span>
+            <div><p class="depo-nome">Nome da paciente</p><p class="depo-arroba">@instagram</p></div>
+            <span class="estrelas" role="img" aria-label="5 estrelas"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+          </figcaption>
+        </figure>
+        <!-- RASCUNHO: substitua pelo depoimento real (texto, nome, @ e foto) e remova a classe "rascunho" -->
+        <figure class="depo rascunho">
+          <blockquote>“Espaço para o depoimento real de uma paciente. Substitua este texto antes de publicar a página.”</blockquote>
+          <figcaption class="depo-quem">
+            <span class="depo-ini" aria-hidden="true">P3</span>
+            <div><p class="depo-nome">Nome da paciente</p><p class="depo-arroba">@instagram</p></div>
+            <span class="estrelas" role="img" aria-label="5 estrelas"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="depo-ctrl">
+        <button type="button" class="seta" data-dir="-1" aria-label="Depoimento anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="depo-dots" id="depoDots"></div>
+        <button type="button" class="seta" data-dir="1" aria-label="Próximo depoimento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="passos">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <ol>
+        <li><h3>Avaliação</h3><p>A Dra. analisa seu sorriso, seu rosto e o que você quer mudar.</p></li>
+        <li><h3>Planejamento</h3><p>Formato, cor e proporção pensados para você.</p></li>
+        <li><h3>Confecção</h3><p>As facetas são construídas camada por camada, respeitando textura e translucidez.</p></li>
+        <li><h3>Resultado</h3><p>Um sorriso harmônico, com acompanhamento e orientações de cuidado.</p></li>
+      </ol>
+    </div>
+  </section>
+
+
+
+  <!-- POR QUE FICA NATURAL -->
+  <section class="natural">
+    <div class="wrap natural-grid">
+      <div class="natural-foto"><img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-detalhe-textura.webp" alt="Detalhe das facetas em resina mostrando textura e translucidez" width="1000" height="1088" loading="lazy"></div>
+      <div>
+        <h2>Por que o resultado fica natural</h2>
+        <div class="pilar"><h3>Anatomia respeitada</h3><p>Cada dente mantém características de dente de verdade.</p></div>
+        <div class="pilar"><h3>Cor sob medida</h3><p>Nada de branco artificial. O tom combina com a sua pele e o seu rosto.</p></div>
+        <div class="pilar"><h3>Proporção com o rosto</h3><p>O sorriso é desenhado para você, não copiado de um modelo.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- SOBRE -->
+  <section class="sobre">
+    <div class="wrap sobre-grid">
+      <div class="sobre-foto"><img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-dra-sobre.webp" alt="Dra. Gabriella Gouveia" width="1000" height="955" loading="lazy"></div>
+      <div>
+        <h2>Dra. Gabriella Gouveia</h2>
+        <p class="cro">CRO/PE 21654</p>
+        <p>Especialista em Odontologia Estética e Harmonização Facial, com mais de 10 anos transformando autoestima com naturalidade.</p>
+        <p>Atende em Caruaru e Garanhuns.</p>
+        <div class="redes">
+          <a href="https://www.instagram.com/dragabriellagouveia/" target="_blank" rel="noopener" data-rede="instagram-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@dragabriellagouveia</a>
+          <!-- ROTA GARANHUNS: troque pelo link do Google Maps do consultório -->
+          <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Garanhuns" target="_blank" rel="noopener" data-rede="rota-garanhuns-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Garanhuns</a>
+          <!-- ROTA CARUARU: troque pelo link do Google Maps do consultório -->
+          <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Caruaru" target="_blank" rel="noopener" data-rede="rota-caruaru-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Caruaru</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTÓRIO -->
+  <section class="consultorio">
+    <div class="wrap">
+      <h2>O consultório</h2>
+      <p class="intro">Um espaço pensado para você se sentir à vontade, da primeira conversa ao resultado final.</p>
+      <div class="cons-grid">
+        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: recepção ou sala de espera -->
+        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1762625570087-6d98fca29531?auto=format&fit=crop&w=900&h=1125&q=75" alt="Recepção e sala de espera" width="900" height="1125" loading="lazy"></figure>
+        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: a Dra. conversando com uma paciente (com autorização) -->
+        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1777331903190-341a3dd0441b?auto=format&fit=crop&w=900&h=1125&q=75" alt="Momento da avaliação" width="900" height="1125" loading="lazy"></figure>
+        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: a cadeira e o ambiente de atendimento, ângulo aberto -->
+        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&h=1125&q=75" alt="Sala de atendimento" width="900" height="1125" loading="lazy"></figure>
+        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: um detalhe do consultório (materiais, espelho, decoração) -->
+        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1704455306251-b4634215d98f?auto=format&fit=crop&w=900&h=1125&q=75" alt="Estrutura do consultório" width="900" height="1125" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <h2>Perguntas frequentes</h2>
+      <details><summary>Quanto custam as facetas?</summary><p>O valor depende de quantos dentes, da condição de cada um e do planejamento. Por isso não passamos preço sem avaliar. Na consulta você sai com o planejamento e o valor exato, sem surpresa.</p></details>
+      <details><summary>Por que pagar pela avaliação?</summary><p>Não é uma conversa rápida. É uma <strong>análise e um diagnóstico completo do seu sorriso</strong>, feitos pela própria Dra. Gabriella. Além disso, o seu <strong>horário fica garantido</strong>: esse tempo é reservado exclusivamente para você, sem encaixar outros atendimentos no mesmo horário. E se você <strong>fechar o tratamento, o valor da avaliação é abatido</strong>.</p></details>
+      <details><summary>Vai ficar artificial?</summary><p>Esse é justamente o foco do trabalho. A técnica camada por camada e o planejamento individual existem para que o resultado pareça o seu sorriso, só que na melhor versão.</p></details>
+      <details><summary>Quanto tempo demora?</summary><p>Depende do caso e da quantidade de dentes. O prazo exato é definido na avaliação.</p></details>
+      <details><summary>Quanto tempo duram?</summary><p>Com os cuidados certos e manutenção periódica, as facetas em resina duram anos. Você sai da clínica com todas as orientações.</p></details>
+      <details><summary>Precisa desgastar o dente?</summary><p>A resina costuma ser uma técnica conservadora, com pouco ou nenhum desgaste. A Dra. avalia cada caso individualmente.</p></details>
+      <details><summary>Tem parcelamento?</summary><p>Sim. As condições são apresentadas na avaliação.</p></details>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="agendar" id="agendar">
+    <div class="wrap">
+      <form class="form-box" id="ggForm" novalidate>
+        <h2>Dê o primeiro passo para o sorriso que você quer</h2>
+        <p class="intro">Preencha e fale direto com a equipe da Dra. Gabriella pelo WhatsApp.</p>
+
+        <div class="campo"><label class="rt" for="gg-nome">Nome</label>
+          <input id="gg-nome" name="nome" type="text" autocomplete="name" placeholder="Maria Souza">
+          <p class="erro">Digite seu nome.</p></div>
+
+        <div class="campo"><label class="rt" for="gg-zap">WhatsApp</label>
+          <input id="gg-zap" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(81) 99999 9999">
+          <p class="erro">Digite um WhatsApp com DDD.</p></div>
+
+        <div class="campo"><span class="rt" id="gg-cid-rt">Cidade</span>
+          <div class="cidades" role="radiogroup" aria-labelledby="gg-cid-rt">
+            <input type="radio" name="cidade" id="gg-car" value="Caruaru"><label for="gg-car">Caruaru</label>
+            <input type="radio" name="cidade" id="gg-gus" value="Garanhuns"><label for="gg-gus">Garanhuns</label>
+          </div>
+          <p class="erro">Escolha a cidade do atendimento.</p></div>
+
+        <div class="campo"><label class="rt" for="gg-queixa">O que mais te incomoda no sorriso</label>
+          <select id="gg-queixa" name="queixa">
+            <option value="">Selecione</option>
+            <option>Manchas ou cor</option><option>Desgaste</option><option>Dentes quebrados</option>
+            <option>Formato dos dentes</option><option>Espaços entre os dentes</option><option>Não sei dizer</option>
+          </select>
+          <p class="erro">Escolha uma opção.</p></div>
+
+        <button class="btn" type="submit" id="gg-enviar">Quero agendar minha avaliação</button>
+        <p class="privac">Seus dados são usados só para o contato da equipe da Dra. Gabriella.</p>
+      </form>
+    </div>
+  </section>
+  <div class="rodape"><div class="logo-bloco"><img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-logo-nome-clara.png" alt="Dra. Gabriella Gouveia" width="883" height="64" loading="lazy"><span class="logo-tag">Odontologia Estética</span></div>
+    <div class="redes">
+      <a href="https://www.instagram.com/dragabriellagouveia/" target="_blank" rel="noopener" aria-label="Instagram da Dra. Gabriella" data-rede="instagram-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+      <!-- ROTA GARANHUNS: troque pelo link do Google Maps do consultório -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Garanhuns" target="_blank" rel="noopener" data-rede="rota-garanhuns-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Garanhuns</a>
+      <!-- ROTA CARUARU: troque pelo link do Google Maps do consultório -->
+      <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Caruaru" target="_blank" rel="noopener" data-rede="rota-caruaru-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Caruaru</a>
+    </div>
+    Caruaru e Garanhuns · CRO/PE 21654
+    <p class="nota-legal">Imagens de antes e depois publicadas com autorização das pacientes. Os resultados variam de acordo com cada caso.</p>
+  </div>
+
+  <a class="zap" id="gg-zapbtn" href="https://wa.me/558194967772?text=Ol%C3%A1%2C%20Dra.%20Gabriella!%20Vim%20pela%20p%C3%A1gina%20das%20facetas%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.6 1.9 6.6L3 29l7-2.1c1.9 1 4 1.6 6 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.2-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.7 10.1 5 16 5s10.7 4.7 10.7 10.6S21.9 26.2 16 26.2zm5.9-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4 2.4 3.6 5.7 5c.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+</div>
+
+<!-- PIXEL DA DRA. GABRIELLA (dispara só para o pixel dela, mesmo que o site tenha outro pixel) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+window.GG_PIXEL='969792725822558';
+fbq('init',window.GG_PIXEL);
+fbq('trackSingle',window.GG_PIXEL,'PageView');
+</script>
+<script>
+(function(){
+  /* ===== CONFIGURAÇÃO ===== */
+  var PLANILHA_URL = "";   /* cole aqui a URL do Apps Script (ver LEIA-ME). Vazio = não salva em planilha */
+  var OBRIGADO_URL = "/dra-gabriella-obrigado/";  /* endereço da página de obrigado no WordPress */
+
+  var fb = function(ev,p){ try{ if(typeof fbq==='function') fbq('trackSingle',window.GG_PIXEL,ev,p||{}); }catch(e){} };
+
+  /* comparadores */
+  document.querySelectorAll('.gg .comp').forEach(function(comp){
+    var ra=comp.querySelector('input'), an=comp.querySelector('.antes'),
+        li=comp.querySelector('.linha'), pu=comp.querySelector('.puxador'), arrasta=false;
+    comp._pos=function(v){ v=Math.max(0,Math.min(100,v)); ra.value=v; an.style.clipPath='inset(0 '+(100-v)+'% 0 0)'; an.style.webkitClipPath='inset(0 '+(100-v)+'% 0 0)'; li.style.left=v+'%'; pu.style.left=v+'%'; };
+    var deX=function(x){ var r=comp.getBoundingClientRect(); comp._pos((x-r.left)/r.width*100); };
+    comp.addEventListener('pointerdown',function(e){ arrasta=true; try{comp.setPointerCapture(e.pointerId);}catch(_){} deX(e.clientX); });
+    comp.addEventListener('pointermove',function(e){ if(arrasta) deX(e.clientX); });
+    ['pointerup','pointercancel','lostpointercapture'].forEach(function(ev){ comp.addEventListener(ev,function(){ arrasta=false; }); });
+    /* reserva para navegadores antigos sem pointer events */
+    if(!window.PointerEvent){
+      comp.addEventListener('touchstart',function(e){ deX(e.touches[0].clientX); },{passive:true});
+      comp.addEventListener('touchmove',function(e){ deX(e.touches[0].clientX); },{passive:true});
+    }
+    ra.addEventListener('input',function(){ comp._pos(+ra.value); });
+  });
+  document.querySelectorAll('.gg .casos').forEach(function(g){
+    var sec=g.closest('.result'), comp=sec.querySelector('.comp'), lg=sec.querySelector('.legenda'), bts=g.querySelectorAll('button');
+    bts.forEach(function(b){
+      var i=new Image(); i.src=b.dataset.a; var j=new Image(); j.src=b.dataset.d;
+      b.addEventListener('click',function(){
+        bts.forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); });
+        comp.querySelector('.antes').src=b.dataset.a; comp.querySelector('.depois').src=b.dataset.d;
+        if(lg) lg.textContent=b.dataset.t; comp._pos(50);
+      });
+    });
+  });
+
+
+  /* carrossel de depoimentos */
+  (function(){
+    var tr=document.getElementById('depoTrack'); if(!tr) return;
+    var cards=[].slice.call(tr.querySelectorAll('.depo')), dots=document.getElementById('depoDots');
+    var porTela=function(){ return window.innerWidth>=880?2:1; };
+    var paginas=function(){ return Math.max(1,cards.length-porTela()+1); };
+    var atual=0, timer=null, parado=false;
+    var reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var montaDots=function(){
+      dots.innerHTML='';
+      for(var i=0;i<paginas();i++){ var d=document.createElement('button'); d.type='button'; d.setAttribute('aria-label','Ir para depoimento '+(i+1));
+        (function(k){ d.addEventListener('click',function(){ vai(k); pausa(); }); })(i); dots.appendChild(d); }
+      marca();
+    };
+    var marca=function(){ [].forEach.call(dots.children,function(d,i){ d.setAttribute('aria-current',i===atual?'true':'false'); }); };
+    var vai=function(i){ var n=paginas(); atual=(i+n)%n; tr.scrollTo({left:cards[atual].offsetLeft-tr.offsetLeft,behavior:reduz?'auto':'smooth'}); marca(); };
+    var inicia=function(){ if(reduz||paginas()<2) return; clearInterval(timer); timer=setInterval(function(){ if(!parado) vai(atual+1); },6000); };
+    var pausa=function(){ parado=true; clearTimeout(tr._r); tr._r=setTimeout(function(){ parado=false; },9000); };
+    document.querySelectorAll('.gg .depo-ctrl .seta').forEach(function(b){ b.addEventListener('click',function(){ vai(atual+ +b.dataset.dir); pausa(); }); });
+    ['pointerdown','touchstart','focusin','mouseenter'].forEach(function(ev){ tr.addEventListener(ev,pausa,{passive:true}); });
+    var t; tr.addEventListener('scroll',function(){ clearTimeout(t); t=setTimeout(function(){
+      var x=tr.scrollLeft, m=0, dm=1e9; cards.forEach(function(c,i){ var dd=Math.abs(c.offsetLeft-tr.offsetLeft-x); if(dd<dm){dm=dd;m=i;} });
+      atual=Math.min(m,paginas()-1); marca(); },120); },{passive:true});
+    window.addEventListener('resize',function(){ montaDots(); vai(Math.min(atual,paginas()-1)); });
+    montaDots(); inicia();
+  })();
+
+  /* máscara do WhatsApp */
+  var zap=document.getElementById('gg-zap');
+  zap.addEventListener('input',function(){
+    var d=zap.value.replace(/\D/g,'').slice(0,11), f=d;
+    if(d.length>2) f='('+d.slice(0,2)+') '+d.slice(2);
+    if(d.length>7) f='('+d.slice(0,2)+') '+d.slice(2,7)+' '+d.slice(7);
+    zap.value=f;
+  });
+
+  /* utm */
+  var qs=new URLSearchParams(location.search);
+
+  /* formulário */
+  var form=document.getElementById('ggForm'), btn=document.getElementById('gg-enviar');
+  var marca=function(campo,ok){ campo.closest('.campo').classList.toggle('invalido',!ok); return ok; };
+  form.querySelectorAll('input,select').forEach(function(el){
+    el.addEventListener('input',function(){ el.closest('.campo').classList.remove('invalido'); });
+    el.addEventListener('change',function(){ el.closest('.campo').classList.remove('invalido'); });
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nome=form.nome.value.trim(), tel=zap.value.replace(/\D/g,''),
+        cid=(form.querySelector('input[name=cidade]:checked')||{}).value||'', qx=form.queixa.value;
+    var ok=[ marca(form.nome,nome.length>=2), marca(zap,tel.length>=10),
+             marca(form.querySelector('.cidades input'),!!cid), marca(form.queixa,!!qx) ];
+    if(ok.indexOf(false)>-1){ var p=form.querySelector('.invalido input,.invalido select'); if(p) p.focus(); return; }
+
+    btn.disabled=true; btn.textContent='Enviando...';
+    var dados={nome:nome, whatsapp:tel, cidade:cid, queixa:qx, pagina:'facetas',
+      utm_source:qs.get('utm_source')||'', utm_campaign:qs.get('utm_campaign')||'',
+      utm_content:qs.get('utm_content')||'', fbclid:qs.get('fbclid')||''};
+    var segue=function(){
+      location.href=OBRIGADO_URL+'?nome='+encodeURIComponent(nome.split(' ')[0])+'&cidade='+encodeURIComponent(cid)+'&queixa='+encodeURIComponent(qx);
+    };
+    if(!PLANILHA_URL){ segue(); return; }
+    var t=setTimeout(segue,2500);
+    fetch(PLANILHA_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(dados)})
+      .then(function(){clearTimeout(t);segue();}).catch(function(){clearTimeout(t);segue();});
+  });
+
+  document.querySelectorAll('.gg [data-rede]').forEach(function(a){ a.addEventListener('click',function(){ fb('ViewContent',{content_name:a.dataset.rede}); }); });
+  document.getElementById('gg-zapbtn').addEventListener('click',function(){ fb('Contact',{content_name:'facetas_botao_flutuante'}); });
+})();
+</script>
+<!-- ÍCONE DA ABA E TÍTULO: troca o ícone da Ideal pelo da Dra. só nesta página -->
+<script>
+(function(){
+  var U='https://idealmktdigital.com/wp-content/uploads/2026/09/';
+  document.querySelectorAll('link[rel~="icon"],link[rel="apple-touch-icon"],link[rel="apple-touch-icon-precomposed"],meta[name="msapplication-TileImage"]').forEach(function(l){ l.parentNode.removeChild(l); });
+  [['icon','gabriella-icone-32.png','32x32'],['icon','gabriella-icone-192.png','192x192'],['apple-touch-icon','gabriella-icone-180.png','180x180']].forEach(function(i){
+    var l=document.createElement('link'); l.rel=i[0]; l.href=U+i[1]; l.setAttribute('sizes',i[2]); l.type='image/png'; document.head.appendChild(l);
+  });
+  document.title='Facetas em Resina em Caruaru e Garanhuns | Dra. Gabriella Gouveia';
+})();
+</script>
+<!-- ===== FIM LP FACETAS ===== -->

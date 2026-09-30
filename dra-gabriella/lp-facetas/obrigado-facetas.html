@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ===== OBRIGADO FACETAS · DRA. GABRIELLA GOUVEIA ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<style>
+.ggo{--cacau:#4B3A33;--terra:#6E5549;--champ:#CDB5A3;--nude:#F6F0EB;
+  width:100vw;margin-left:calc(50% - 50vw);min-height:100vh;box-sizing:border-box;overflow-x:hidden;background:var(--cacau);color:var(--nude);
+  font-family:'Montserrat',system-ui,sans-serif;display:flex;align-items:center;justify-content:center;padding:40px 22px}
+.ggo *{box-sizing:border-box;margin:0;padding:0}
+.ggo .caixa{max-width:520px;text-align:center}
+.ggo h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(38px,9vw,56px);line-height:1.08;color:var(--nude);margin-bottom:18px}
+.ggo p{font-size:16px;line-height:1.65;color:#E6D9CF;margin-bottom:30px}
+.ggo a.btn{display:inline-flex;align-items:center;gap:10px;min-height:56px;padding:0 30px;border-radius:999px;background:#25D366;color:#fff;font:500 16px/1 'Montserrat',sans-serif;text-decoration:none}
+.ggo a.btn svg{width:22px;height:22px;fill:#fff}
+.ggo a.btn:focus-visible{outline:2px solid var(--nude);outline-offset:3px}
+.ggo small{display:block;margin-top:22px;font-size:13px;color:var(--champ)}
+.ggo .logo-bloco{display:flex;flex-direction:column;align-items:center;margin:0 auto 40px}.ggo .logo-bloco img{width:min(300px,78vw);height:auto;margin:0 auto}.ggo .logo-tag{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;margin-top:10px;padding-left:.34em;color:var(--nude)}
+</style>
+
+<div class="ggo">
+  <div class="caixa">
+    <div class="logo-bloco"><img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-logo-nome-clara.png" alt="Dra. Gabriella Gouveia" width="883" height="64"><span class="logo-tag">Odontologia Estética</span></div>
+    <h1 id="ggo-titulo">Recebemos seu contato!</h1>
+    <p>Para agilizar seu atendimento, toque no botão abaixo e fale direto com a equipe da Dra. Gabriella no WhatsApp.</p>
+    <a class="btn" id="ggo-zap" href="https://wa.me/558194967772" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.6 1.9 6.6L3 29l7-2.1c1.9 1 4 1.6 6 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.2-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.7 10.1 5 16 5s10.7 4.7 10.7 10.6S21.9 26.2 16 26.2z"/></svg>
+      Falar no WhatsApp agora
+    </a>
+    <small>Atendimento em Caruaru e Garanhuns</small>
+  </div>
+</div>
+
+<!-- PIXEL DA DRA. GABRIELLA -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+window.GG_PIXEL='969792725822558';
+fbq('init',window.GG_PIXEL);
+fbq('trackSingle',window.GG_PIXEL,'PageView');
+</script>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search), nome=q.get('nome')||'', cid=q.get('cidade')||'', qx=q.get('queixa')||'';
+  if(nome) document.getElementById('ggo-titulo').textContent='Recebemos seu contato, '+nome+'!';
+  var msg='Olá, Dra. Gabriella! '+(nome?'Meu nome é '+nome+', ':'')+(cid?'sou de '+cid+' e ':'')+'preenchi o formulário das facetas em resina.'+(qx&&qx!=='Não sei dizer'?' O que mais me incomoda hoje: '+qx.toLowerCase()+'.':'')+' Gostaria de agendar minha avaliação.';
+  var zap=document.getElementById('ggo-zap');
+  zap.href='https://wa.me/558194967772?text='+encodeURIComponent(msg);
+  var fb=function(ev,p){ try{ if(typeof fbq==='function') fbq('trackSingle',window.GG_PIXEL,ev,p||{}); }catch(e){} };
+  if(nome && !sessionStorage.getItem('gg_lead_facetas')){ fb('Lead',{content_name:'facetas',city:cid}); try{sessionStorage.setItem('gg_lead_facetas','1');}catch(e){} }
+  zap.addEventListener('click',function(){ fb('Contact',{content_name:'facetas_obrigado'}); });
+})();
+</script>
+<!-- ÍCONE DA ABA E TÍTULO: troca o ícone da Ideal pelo da Dra. só nesta página -->
+<script>
+(function(){
+  var U='https://idealmktdigital.com/wp-content/uploads/2026/09/';
+  document.querySelectorAll('link[rel~="icon"],link[rel="apple-touch-icon"],link[rel="apple-touch-icon-precomposed"],meta[name="msapplication-TileImage"]').forEach(function(l){ l.parentNode.removeChild(l); });
+  [['icon','gabriella-icone-32.png','32x32'],['icon','gabriella-icone-192.png','192x192'],['apple-touch-icon','gabriella-icone-180.png','180x180']].forEach(function(i){
+    var l=document.createElement('link'); l.rel=i[0]; l.href=U+i[1]; l.setAttribute('sizes',i[2]); l.type='image/png'; document.head.appendChild(l);
+  });
+  document.title='Obrigado | Dra. Gabriella Gouveia';
+})();
+</script>
+<!-- ===== FIM OBRIGADO ===== -->

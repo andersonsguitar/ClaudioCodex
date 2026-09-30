@@ -1,0 +1,63 @@
+LP FACETAS EM RESINA | DRA. GABRIELLA GOUVEIA
+Guia de implantação no WordPress (idealmktdigital.com)
+
+ARQUIVOS
+lp-facetas.html ........... código da página de vendas (já com os links das imagens do site)
+obrigado-facetas.html ..... código da página de obrigado
+IMAGENS ................... fotos em WebP, logos e ícones da Dra. Pasta jpg-reserva caso o WordPress recuse WebP
+apps-script-planilha.gs ... código para salvar os leads numa Planilha Google
+
+ENDEREÇOS
+Página de vendas: idealmktdigital.com/dra-gabriella-facetas/
+Página de obrigado: idealmktdigital.com/dra-gabriella-obrigado/
+
+1. IMAGENS
+Mídia > Adicionar arquivo de mídia > envie os arquivos gabriella... da pasta IMAGENS.
+Todos precisam ficar na pasta 2026/09 da mídia. Se algum cair em 2026/10, troque 2026/09 por 2026/10 no código.
+
+2. PÁGINAS (Elementor)
+Páginas > Adicionar nova > Editar com Elementor.
+Configurações da página (ícone da folha com engrenagem) > Layout da página > Tela do Elementor.
+Arraste o widget HTML e cole o código. Publicar.
+Slug pela Edição rápida: dra-gabriella-obrigado e dra-gabriella-facetas.
+
+3. ÍCONE DA ABA
+Já está no código das duas páginas. Troca o ícone da Ideal pelo da Dra. só nessas páginas,
+sem mexer no ícone do site. Precisa dos arquivos gabriella-icone-32, 180 e 192 na mídia.
+
+4. IMAGEM AO COMPARTILHAR O LINK (WhatsApp, Instagram, Facebook)
+Não dá pra fazer pelo código da página. Configure no plugin de SEO, em cada página:
+Yoast: editor normal da página > quadro do Yoast > aba Social.
+Rank Math: editor normal da página > ícone do Rank Math > Editar Snippet > Social.
+Imagem: gabriella-icone-512.png
+Título: Facetas em Resina | Dra. Gabriella Gouveia
+Descrição: Um sorriso bonito que parece seu. Facetas planejadas de forma individual em Caruaru e Garanhuns.
+Sem plugin de SEO: defina gabriella-icone-512 como Imagem destacada da página.
+Depois: developers.facebook.com/tools/debug > cole o link > Extrair novamente.
+Marque a página de obrigado como noindex no plugin de SEO.
+
+5. PLANILHA DE LEADS
+Crie uma Planilha Google > Extensões > Apps Script > cole apps-script-planilha.gs > salvar.
+Implantar > Nova implantação > App da Web > Executar como: Eu > Acesso: Qualquer pessoa.
+Copie a URL gerada e cole em PLANILHA_URL no código da LP (entre as aspas).
+
+6. PIXEL DA META
+Pixel da Dra. (969792725822558) já está no código, disparando só pra ela (trackSingle).
+Eventos: PageView, Lead ao abrir o obrigado (1 vez por sessão), Contact nos botões de WhatsApp,
+ViewContent nos links de Instagram e localização. Otimize a campanha pelo evento Lead.
+UTMs nos anúncios: ?utm_source=meta&utm_campaign={{campaign.name}}&utm_content={{ad.name}}
+Para testar sem gerar lead real: Gerenciador de Eventos > Testar eventos.
+
+7. CACHE
+Plugins de cache e otimização podem quebrar o script: exclua as duas páginas da minificação
+e do adiar JavaScript. Depois de publicar, limpe o cache do site.
+
+PENDÊNCIAS
+Depoimentos reais nos 2 cards de rascunho (borda tracejada).
+Links do Google Maps de Garanhuns e Caruaru (marcados como ROTA no código).
+Fotos reais do consultório (4 fotos temporárias do Unsplash).
+Planilha de leads (opcional).
+
+DECIDIDO
+A avaliação é abatida no tratamento (já no FAQ).
+O valor da avaliação não aparece na página.
