@@ -37,7 +37,7 @@ Sem plugin de SEO: defina gabriella-icone-512 como Imagem destacada da página.
 Depois: developers.facebook.com/tools/debug > cole o link > Extrair novamente.
 Marque a página de obrigado como noindex no plugin de SEO.
 
-5. PLANILHA DE LEADS
+5. PLANILHA DE LEADS (já configurada: conta dragabriellagouveiagmn@gmail.com, aba Leads)
 Crie uma Planilha Google > Extensões > Apps Script > cole apps-script-planilha.gs > salvar.
 Implantar > Nova implantação > App da Web > Executar como: Eu > Acesso: Qualquer pessoa.
 Copie a URL gerada e cole em PLANILHA_URL no código da LP (entre as aspas).
@@ -54,7 +54,6 @@ Plugins de cache e otimização podem quebrar o script: exclua as duas páginas 
 e do adiar JavaScript. Depois de publicar, limpe o cache do site.
 
 PENDÊNCIAS
-Planilha de leads (opcional).
 Seção de fotos do consultório foi retirada. Pode voltar quando houver fotos reais.
 
 DECIDIDO
