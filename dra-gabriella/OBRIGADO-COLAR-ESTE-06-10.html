@@ -46,10 +46,11 @@ fbq('trackSingle',window.GG_PIXEL,'PageView');
 (function(){
   var q=new URLSearchParams(location.search), nome=q.get('nome')||'', cid=q.get('cidade')||'', qx=q.get('queixa')||'';
   if(nome) document.getElementById('ggo-titulo').textContent='Recebemos seu contato, '+nome+'!';
-  var msg='Olá, Dra. Gabriella! '+(nome?'Meu nome é '+nome+', ':'')+(cid?'sou de '+cid+' e ':'')+'preenchi o formulário das facetas em resina.'+(qx&&qx!=='Não sei dizer'?' O que mais me incomoda hoje: '+qx.toLowerCase()+'.':'')+' Gostaria de agendar minha avaliação.';
   var zap=document.getElementById('ggo-zap');
   /* link rastreável do Tintim (LP Facetas). O nome, a cidade e a queixa ficam salvos na planilha */
   zap.href='https://tintim.link/whatsapp/fcfc7f2c-77f6-446a-99f5-8d2733ac9194/2e0a0bd0-2bde-42c9-b6a0-b54452a1b33d';
+  var rast=new URLSearchParams(); ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){ if(q.get(k)) rast.set(k,q.get(k)); });
+  if(rast.toString()) zap.href+='?'+rast.toString();
   var fb=function(ev,p){ try{ if(typeof fbq==='function') fbq('trackSingle',window.GG_PIXEL,ev,p||{}); }catch(e){} try{ (window.dataLayer=window.dataLayer||[]).push(Object.assign({event:'gg_'+ev.toLowerCase()},p||{})); }catch(e){} };
   if(nome && !sessionStorage.getItem('gg_lead_facetas')){ fb('Lead',{content_name:'facetas',city:cid}); try{sessionStorage.setItem('gg_lead_facetas','1');}catch(e){} }
   zap.addEventListener('click',function(){ fb('Contact',{content_name:'facetas_obrigado'}); });

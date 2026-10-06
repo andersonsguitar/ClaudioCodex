@@ -59,7 +59,7 @@ Link rastreável "LP Facetas" já está no botão flutuante da página e no bot�
 https://tintim.link/whatsapp/fcfc7f2c-77f6-446a-99f5-8d2733ac9194/2e0a0bd0-2bde-42c9-b6a0-b54452a1b33d
 Link curto: https://tintim.link/s/lLGIiGAY
 Primeira mensagem: "Olá, Dra. Gabriella! Vim pela página das facetas e quero agendar uma avaliação."
-O botão flutuante leva junto as UTMs do anúncio. Nome, cidade e queixa ficam na planilha.
+Os dois botões (flutuante e obrigado) levam junto as UTMs e o fbclid do anúncio. Nome, cidade e queixa ficam na planilha.
 
 7. CACHE
 Plugins de cache e otimização podem quebrar o script: exclua as duas páginas da minificação

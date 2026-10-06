@@ -578,7 +578,9 @@ fbq('trackSingle',window.GG_PIXEL,'PageView');
       utm_source:qs.get('utm_source')||'', utm_campaign:qs.get('utm_campaign')||'',
       utm_content:qs.get('utm_content')||'', fbclid:qs.get('fbclid')||''};
     var segue=function(){
-      location.href=OBRIGADO_URL+'?nome='+encodeURIComponent(nome.split(' ')[0])+'&cidade='+encodeURIComponent(cid)+'&queixa='+encodeURIComponent(qx);
+      /* leva junto as UTMs e o fbclid do anúncio para o botão do Tintim no obrigado */
+      var rast=''; ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){ if(qs.get(k)) rast+='&'+k+'='+encodeURIComponent(qs.get(k)); });
+      location.href=OBRIGADO_URL+'?nome='+encodeURIComponent(nome.split(' ')[0])+'&cidade='+encodeURIComponent(cid)+'&queixa='+encodeURIComponent(qx)+rast;
     };
     if(!PLANILHA_URL){ segue(); return; }
     /* sendBeacon continua enviando mesmo depois que a página muda para o obrigado */
