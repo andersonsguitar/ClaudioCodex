@@ -581,9 +581,11 @@ fbq('trackSingle',window.GG_PIXEL,'PageView');
       location.href=OBRIGADO_URL+'?nome='+encodeURIComponent(nome.split(' ')[0])+'&cidade='+encodeURIComponent(cid)+'&queixa='+encodeURIComponent(qx);
     };
     if(!PLANILHA_URL){ segue(); return; }
-    var t=setTimeout(segue,2500);
-    fetch(PLANILHA_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(dados)})
-      .then(function(){clearTimeout(t);segue();}).catch(function(){clearTimeout(t);segue();});
+    /* sendBeacon continua enviando mesmo depois que a página muda para o obrigado */
+    var corpo=new URLSearchParams(dados), enviado=false;
+    try{ enviado=navigator.sendBeacon && navigator.sendBeacon(PLANILHA_URL,corpo); }catch(e){}
+    if(!enviado){ try{ fetch(PLANILHA_URL,{method:'POST',mode:'no-cors',keepalive:true,body:corpo}); }catch(e){} }
+    setTimeout(segue,400);
   });
 
   document.querySelectorAll('.gg [data-rede]').forEach(function(a){ a.addEventListener('click',function(){ fb('ViewContent',{content_name:a.dataset.rede}); }); });
