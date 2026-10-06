@@ -13,7 +13,8 @@ Página de obrigado: idealmktdigital.com/dra-gabriella-obrigado/
 
 1. IMAGENS
 Mídia > Adicionar arquivo de mídia > envie os arquivos gabriella... da pasta IMAGENS.
-Todos precisam ficar na pasta 2026/09 da mídia. Se algum cair em 2026/10, troque 2026/09 por 2026/10 no código.
+As imagens antigas estão na pasta 2026/09 da mídia.
+As novas de outubro (gabriella-dra-hero-2 e gabriella-depo-print-1 a 4) estão no código apontando para 2026/10.
 
 2. PÁGINAS (Elementor)
 Páginas > Adicionar nova > Editar com Elementor.
@@ -53,10 +54,8 @@ Plugins de cache e otimização podem quebrar o script: exclua as duas páginas 
 e do adiar JavaScript. Depois de publicar, limpe o cache do site.
 
 PENDÊNCIAS
-Depoimentos reais nos 2 cards de rascunho (borda tracejada).
-Links do Google Maps de Garanhuns e Caruaru (marcados como ROTA no código).
-Fotos reais do consultório (4 fotos temporárias do Unsplash).
 Planilha de leads (opcional).
+Seção de fotos do consultório foi retirada. Pode voltar quando houver fotos reais.
 
 DECIDIDO
 A avaliação é abatida no tratamento (já no FAQ).

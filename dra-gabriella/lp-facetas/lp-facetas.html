@@ -142,8 +142,10 @@
 .gg .depo-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px}
 .gg .depo-track::-webkit-scrollbar{display:none}
 .gg .depo{flex:0 0 100%;scroll-snap-align:start;background:var(--branco);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column;gap:22px;min-width:0}
-.gg .depo.rascunho{border:1.5px dashed var(--terra);background:#FBF7F4}
-.gg .depo.rascunho blockquote{color:var(--terra)}
+.gg .depo-track{align-items:center}
+.gg .depo-print{justify-content:center;align-items:center;padding:14px 12px 18px;gap:14px}
+.gg .depo-print img{width:100%;height:auto;border-radius:14px;display:block}
+.gg .depo-legenda{font-size:14px;color:var(--terra);text-align:center}
 .gg .depo blockquote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.45;color:var(--cacau);margin:0}
 .gg .depo-quem{display:flex;align-items:center;flex-wrap:wrap;gap:12px 14px;margin-top:auto}
 .gg .depo-quem>div{min-width:0}
@@ -164,7 +166,7 @@
   .gg .hero{grid-template-columns:1.05fr .95fr;min-height:640px}
   .gg .hero-txt{order:1;align-self:center;padding:60px 48px 60px max(22px,calc((100vw - 1120px)/2 + 22px))}
   .gg .hero-foto{order:2;height:100%;max-height:none;border-bottom-right-radius:0;border-bottom-left-radius:220px 100%}
-  .gg .hero-txt .btn,.gg .hero-txt .sub2,.gg .hero-nota{order:0}.gg .hero-txt .sub2{margin:0 0 14px}.gg .hero-chamada{display:block}
+  .gg .hero-txt .btn,.gg .hero-txt .sub2,.gg .hero-nota{order:0}.gg .hero-txt .sub2,.gg .hero-txt .sub2.sub3{margin:0 0 14px}.gg .hero-chamada{display:block}
   .gg .hero-foto .hero-logo{left:auto;right:36px;top:32px;width:220px;opacity:.9}
   .gg .natural-grid{grid-template-columns:.9fr 1.1fr;align-items:center;gap:64px}
   .gg .sobre-grid{grid-template-columns:.8fr 1.2fr;gap:64px}
@@ -198,17 +200,8 @@
 .gg .logo-bloco{display:flex;flex-direction:column;align-items:center;margin:0 auto 18px}.gg .logo-bloco img{width:min(300px,78vw);height:auto;margin:0 auto}.gg .logo-tag{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;margin-top:10px;padding-left:.34em}
 .gg .rodape .logo-tag{color:var(--nude)}
 .gg .hero-local strong{font-weight:700;color:var(--cacau)}
-
-/* consultório */
-.gg .consultorio{background:var(--rose);padding:84px 0}
-.gg .consultorio h2{font-size:clamp(34px,7vw,52px);text-align:center;margin-bottom:12px}
-.gg .consultorio .intro{text-align:center;max-width:30em;margin:0 auto 34px;color:var(--terra)}
-.gg .cons-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.gg .cons-foto{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--champ)}
-.gg .cons-foto img{width:100%;height:100%;object-fit:cover}
-.gg .cons-foto:nth-child(1){border-top-left-radius:46% 30%}
-.gg .cons-foto:nth-child(4){border-bottom-right-radius:46% 30%}
-@media (min-width:880px){.gg .cons-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+@media (max-width:879px){.gg .hero-txt .sub2.sub3{margin-top:12px}}
+.gg .hero-sub strong{font-weight:600}
 
 /* celular: tudo centralizado */
 @media (max-width:879px){
@@ -238,16 +231,16 @@
   <!-- TOPO -->
   <section class="hero">
     <div class="hero-foto">
-      <img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-dra-hero.webp" alt="Dra. Gabriella Gouveia" width="1400" height="1875" fetchpriority="high">
+      <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-dra-hero-2.webp" alt="Dra. Gabriella Gouveia" width="1200" height="1799" fetchpriority="high">
       <img class="hero-logo" src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-logo-nome-escura.png" alt="Dra. Gabriella Gouveia" width="883" height="64">
     </div>
     <div class="hero-txt">
-      <p class="hero-local"><strong>Facetas em resina</strong> em Caruaru e Garanhuns</p>
-      <h1>Um <strong>sorriso bonito</strong> que parece seu.</h1>
-      <p class="hero-sub">Facetas em resina planejadas de forma individual, considerando seus traços, proporções e características do seu sorriso.</p>
-      <p class="hero-sub sub2">O objetivo? Valorizar o seu sorriso com um resultado natural, harmônico e que respeite a sua identidade.</p>
-      <p class="hero-chamada">Conheça o planejamento para transformar o seu sorriso.</p>
-      <a class="btn" href="#agendar" data-cta="topo">Quero agendar minha avaliação</a>
+      <p class="hero-local">Caruaru e Garanhuns</p>
+      <h1>Você não gosta do seu <strong>sorriso</strong>?</h1>
+      <p class="hero-sub"><strong>Facetas em resina</strong> planejadas para o seu rosto, com naturalidade em cada detalhe.</p>
+      <p class="hero-sub sub2">Seu sorriso pode ter <strong>manchas, desgaste, espaços, dentes quebrados</strong> ou simplesmente um formato que não combina com você.</p>
+      <p class="hero-sub sub2 sub3">O objetivo não é criar um sorriso artificial. É valorizar o que já é seu, respeitando seus traços, proporções e identidade.</p>
+      <a class="btn" href="#agendar" data-cta="topo">Quero agendar uma avaliação</a>
       <p class="hero-nota">Dra. Gabriella Gouveia · CRO/PE 21654</p>
     </div>
   </section>
@@ -300,7 +293,7 @@
         <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois">
       </div>
       <p class="dica">Arraste para os lados e compare.</p>
-      <a class="btn cta-sec" href="#agendar" data-cta="caso2">Quero agendar minha avaliação</a>
+      <a class="btn cta-sec" href="#agendar" data-cta="caso2">Quero agendar uma avaliação</a>
     </div>
   </section>
 
@@ -318,7 +311,7 @@
         <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois">
       </div>
       <p class="dica">Arraste para os lados e compare.</p>
-      <a class="btn cta-sec" href="#agendar" data-cta="retrabalho">Quero avaliar meu caso</a>
+      <a class="btn cta-sec" href="#agendar" data-cta="retrabalho">Quero agendar uma avaliação</a>
       <p class="nota-legal">Imagens publicadas com autorização das pacientes. Os resultados variam de acordo com cada caso.</p>
     </div>
   </section>
@@ -336,23 +329,21 @@
             <span class="estrelas" role="img" aria-label="5 estrelas"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
           </figcaption>
         </figure>
-        <!-- RASCUNHO: substitua pelo depoimento real (texto, nome, @ e foto) e remova a classe "rascunho" -->
-        <figure class="depo rascunho">
-          <blockquote>“Espaço para o depoimento real de uma paciente. Substitua este texto antes de publicar a página.”</blockquote>
-          <figcaption class="depo-quem">
-            <span class="depo-ini" aria-hidden="true">P2</span>
-            <div><p class="depo-nome">Nome da paciente</p><p class="depo-arroba">@instagram</p></div>
-            <span class="estrelas" role="img" aria-label="5 estrelas"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
-          </figcaption>
+        <figure class="depo depo-print">
+          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-1.webp" alt="Relato de paciente: Eu amei! Até minha mãe, que era contra porque achava que podia ficar parecendo tecla de piano, amou. Disse que foi o mais bonito que ela já viu na vida." width="852" height="312" loading="lazy">
+          <figcaption class="depo-legenda">Paciente de facetas em resina</figcaption>
         </figure>
-        <!-- RASCUNHO: substitua pelo depoimento real (texto, nome, @ e foto) e remova a classe "rascunho" -->
-        <figure class="depo rascunho">
-          <blockquote>“Espaço para o depoimento real de uma paciente. Substitua este texto antes de publicar a página.”</blockquote>
-          <figcaption class="depo-quem">
-            <span class="depo-ini" aria-hidden="true">P3</span>
-            <div><p class="depo-nome">Nome da paciente</p><p class="depo-arroba">@instagram</p></div>
-            <span class="estrelas" role="img" aria-label="5 estrelas"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
-          </figcaption>
+        <figure class="depo depo-print">
+          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-2.webp" alt="Relato de paciente: Gabi, mais uma vez muito obrigada, você é perfeita e fez um trabalho maravilhoso na minha boca, não paro de me olhar no espelho." width="1140" height="492" loading="lazy">
+          <figcaption class="depo-legenda">Relato enviado pelo WhatsApp</figcaption>
+        </figure>
+        <figure class="depo depo-print">
+          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-3.webp" alt="Relato de paciente: Só me arrependo de não ter feito antes. Obrigada por insistir e por ser tão maravilhosa no seu trabalho." width="1024" height="592" loading="lazy">
+          <figcaption class="depo-legenda">Relato enviado pelo WhatsApp</figcaption>
+        </figure>
+        <figure class="depo depo-print">
+          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-4.webp" alt="Comentário de paciente: Muito satisfeito, Gabi! Através do meu próprio caso, vi que eu não errei na previsão. Obrigado pela paciência, assistência e serviço prestado com excelência." width="624" height="308" loading="lazy">
+          <figcaption class="depo-legenda">Comentário no Instagram da Dra.</figcaption>
         </figure>
       </div>
       <div class="depo-ctrl">
@@ -404,29 +395,9 @@
         <p>Atende em Caruaru e Garanhuns.</p>
         <div class="redes">
           <a href="https://www.instagram.com/dragabriellagouveia/" target="_blank" rel="noopener" data-rede="instagram-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@dragabriellagouveia</a>
-          <!-- ROTA GARANHUNS: troque pelo link do Google Maps do consultório -->
-          <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Garanhuns" target="_blank" rel="noopener" data-rede="rota-garanhuns-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Garanhuns</a>
-          <!-- ROTA CARUARU: troque pelo link do Google Maps do consultório -->
-          <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Caruaru" target="_blank" rel="noopener" data-rede="rota-caruaru-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Caruaru</a>
+              <a href="https://share.google/kTI83wkpKpD84E3Go" target="_blank" rel="noopener" data-rede="rota-garanhuns-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Garanhuns</a>
+              <a href="https://share.google/ASyIH3O2WMu5sPIsr" target="_blank" rel="noopener" data-rede="rota-caruaru-sobre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Caruaru</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONSULTÓRIO -->
-  <section class="consultorio">
-    <div class="wrap">
-      <h2>O consultório</h2>
-      <p class="intro">Um espaço pensado para você se sentir à vontade, da primeira conversa ao resultado final.</p>
-      <div class="cons-grid">
-        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: recepção ou sala de espera -->
-        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1762625570087-6d98fca29531?auto=format&fit=crop&w=900&h=1125&q=75" alt="Recepção e sala de espera" width="900" height="1125" loading="lazy"></figure>
-        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: a Dra. conversando com uma paciente (com autorização) -->
-        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1777331903190-341a3dd0441b?auto=format&fit=crop&w=900&h=1125&q=75" alt="Momento da avaliação" width="900" height="1125" loading="lazy"></figure>
-        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: a cadeira e o ambiente de atendimento, ângulo aberto -->
-        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&h=1125&q=75" alt="Sala de atendimento" width="900" height="1125" loading="lazy"></figure>
-        <!-- FOTO TEMPORÁRIA (Unsplash, licença gratuita). Trocar por: um detalhe do consultório (materiais, espelho, decoração) -->
-        <figure class="cons-foto"><img src="https://images.unsplash.com/photo-1704455306251-b4634215d98f?auto=format&fit=crop&w=900&h=1125&q=75" alt="Estrutura do consultório" width="900" height="1125" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -475,7 +446,7 @@
           </select>
           <p class="erro">Escolha uma opção.</p></div>
 
-        <button class="btn" type="submit" id="gg-enviar">Quero agendar minha avaliação</button>
+        <button class="btn" type="submit" id="gg-enviar">Quero agendar uma avaliação</button>
         <p class="privac">Seus dados são usados só para o contato da equipe da Dra. Gabriella.</p>
       </form>
     </div>
@@ -483,10 +454,8 @@
   <div class="rodape"><div class="logo-bloco"><img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-logo-nome-clara.png" alt="Dra. Gabriella Gouveia" width="883" height="64" loading="lazy"><span class="logo-tag">Odontologia Estética</span></div>
     <div class="redes">
       <a href="https://www.instagram.com/dragabriellagouveia/" target="_blank" rel="noopener" aria-label="Instagram da Dra. Gabriella" data-rede="instagram-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a>
-      <!-- ROTA GARANHUNS: troque pelo link do Google Maps do consultório -->
-      <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Garanhuns" target="_blank" rel="noopener" data-rede="rota-garanhuns-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Garanhuns</a>
-      <!-- ROTA CARUARU: troque pelo link do Google Maps do consultório -->
-      <a href="https://www.google.com/maps/search/?api=1&query=Dra.%20Gabriella%20Gouveia%20Caruaru" target="_blank" rel="noopener" data-rede="rota-caruaru-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Caruaru</a>
+      <a href="https://share.google/kTI83wkpKpD84E3Go" target="_blank" rel="noopener" data-rede="rota-garanhuns-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Garanhuns</a>
+      <a href="https://share.google/ASyIH3O2WMu5sPIsr" target="_blank" rel="noopener" data-rede="rota-caruaru-rodape"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Localização Caruaru</a>
     </div>
     Caruaru e Garanhuns · CRO/PE 21654
     <p class="nota-legal">Imagens de antes e depois publicadas com autorização das pacientes. Os resultados variam de acordo com cada caso.</p>
