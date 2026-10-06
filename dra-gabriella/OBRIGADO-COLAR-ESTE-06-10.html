@@ -27,7 +27,7 @@
     <div class="logo-bloco"><img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-logo-nome-clara.png" alt="Dra. Gabriella Gouveia" width="883" height="64"><span class="logo-tag">Odontologia Estética</span></div>
     <h1 id="ggo-titulo">Recebemos seu contato!</h1>
     <p>Para agilizar seu atendimento, toque no botão abaixo e fale direto com a equipe da Dra. Gabriella no WhatsApp.</p>
-    <a class="btn" id="ggo-zap" href="https://wa.me/558194967772" target="_blank" rel="noopener">
+    <a class="btn" id="ggo-zap" href="https://tintim.link/whatsapp/fcfc7f2c-77f6-446a-99f5-8d2733ac9194/2e0a0bd0-2bde-42c9-b6a0-b54452a1b33d" target="_blank" rel="noopener">
       <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.6 1.9 6.6L3 29l7-2.1c1.9 1 4 1.6 6 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.2-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.3 9.7 10.1 5 16 5s10.7 4.7 10.7 10.6S21.9 26.2 16 26.2z"/></svg>
       Falar no WhatsApp agora
     </a>
@@ -48,7 +48,8 @@ fbq('trackSingle',window.GG_PIXEL,'PageView');
   if(nome) document.getElementById('ggo-titulo').textContent='Recebemos seu contato, '+nome+'!';
   var msg='Olá, Dra. Gabriella! '+(nome?'Meu nome é '+nome+', ':'')+(cid?'sou de '+cid+' e ':'')+'preenchi o formulário das facetas em resina.'+(qx&&qx!=='Não sei dizer'?' O que mais me incomoda hoje: '+qx.toLowerCase()+'.':'')+' Gostaria de agendar minha avaliação.';
   var zap=document.getElementById('ggo-zap');
-  zap.href='https://wa.me/558194967772?text='+encodeURIComponent(msg);
+  /* link rastreável do Tintim (LP Facetas). O nome, a cidade e a queixa ficam salvos na planilha */
+  zap.href='https://tintim.link/whatsapp/fcfc7f2c-77f6-446a-99f5-8d2733ac9194/2e0a0bd0-2bde-42c9-b6a0-b54452a1b33d';
   var fb=function(ev,p){ try{ if(typeof fbq==='function') fbq('trackSingle',window.GG_PIXEL,ev,p||{}); }catch(e){} try{ (window.dataLayer=window.dataLayer||[]).push(Object.assign({event:'gg_'+ev.toLowerCase()},p||{})); }catch(e){} };
   if(nome && !sessionStorage.getItem('gg_lead_facetas')){ fb('Lead',{content_name:'facetas',city:cid}); try{sessionStorage.setItem('gg_lead_facetas','1');}catch(e){} }
   zap.addEventListener('click',function(){ fb('Contact',{content_name:'facetas_obrigado'}); });
