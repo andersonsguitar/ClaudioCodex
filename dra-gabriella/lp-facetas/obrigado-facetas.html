@@ -1,5 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GOOGLE TAG MANAGER DA DRA. GABRIELLA (GTM-NQBCHRKD) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NQBCHRKD');</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQBCHRKD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== OBRIGADO FACETAS · DRA. GABRIELLA GOUVEIA ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +49,7 @@ fbq('trackSingle',window.GG_PIXEL,'PageView');
   var msg='Olá, Dra. Gabriella! '+(nome?'Meu nome é '+nome+', ':'')+(cid?'sou de '+cid+' e ':'')+'preenchi o formulário das facetas em resina.'+(qx&&qx!=='Não sei dizer'?' O que mais me incomoda hoje: '+qx.toLowerCase()+'.':'')+' Gostaria de agendar minha avaliação.';
   var zap=document.getElementById('ggo-zap');
   zap.href='https://wa.me/558194967772?text='+encodeURIComponent(msg);
-  var fb=function(ev,p){ try{ if(typeof fbq==='function') fbq('trackSingle',window.GG_PIXEL,ev,p||{}); }catch(e){} };
+  var fb=function(ev,p){ try{ if(typeof fbq==='function') fbq('trackSingle',window.GG_PIXEL,ev,p||{}); }catch(e){} try{ (window.dataLayer=window.dataLayer||[]).push(Object.assign({event:'gg_'+ev.toLowerCase()},p||{})); }catch(e){} };
   if(nome && !sessionStorage.getItem('gg_lead_facetas')){ fb('Lead',{content_name:'facetas',city:cid}); try{sessionStorage.setItem('gg_lead_facetas','1');}catch(e){} }
   zap.addEventListener('click',function(){ fb('Contact',{content_name:'facetas_obrigado'}); });
 })();

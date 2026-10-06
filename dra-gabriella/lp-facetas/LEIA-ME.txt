@@ -49,6 +49,11 @@ ViewContent nos links de Instagram e localização. Otimize a campanha pelo even
 UTMs nos anúncios: ?utm_source=meta&utm_campaign={{campaign.name}}&utm_content={{ad.name}}
 Para testar sem gerar lead real: Gerenciador de Eventos > Testar eventos.
 
+6B. GOOGLE TAG MANAGER
+Contêiner GTM-NQBCHRKD já está no código das duas páginas.
+Eventos enviados ao dataLayer: gg_lead (obrigado), gg_contact (WhatsApp), gg_viewcontent (Instagram e localização).
+Não criar tag do Pixel da Meta no GTM: o pixel já está no código.
+
 7. CACHE
 Plugins de cache e otimização podem quebrar o script: exclua as duas páginas da minificação
 e do adiar JavaScript. Depois de publicar, limpe o cache do site.
