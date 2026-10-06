@@ -44,14 +44,14 @@ Copie a URL gerada e cole em PLANILHA_URL no código da LP (entre as aspas).
 
 6. PIXEL DA META
 Pixel da Dra. (969792725822558) já está no código, disparando só pra ela (trackSingle).
-Eventos: PageView, Lead ao abrir o obrigado (1 vez por sessão), Contact nos botões de WhatsApp,
+Eventos: PageView, Lead ao abrir o obrigado OU ao clicar no WhatsApp flutuante (1 vez por sessão), Contact nos botões de WhatsApp,
 ViewContent nos links de Instagram e localização. Otimize a campanha pelo evento Lead.
 UTMs nos anúncios: ?utm_source=meta&utm_campaign={{campaign.name}}&utm_content={{ad.name}}
 Para testar sem gerar lead real: Gerenciador de Eventos > Testar eventos.
 
 6B. GOOGLE TAG MANAGER
 Contêiner GTM-NQBCHRKD já está no código das duas páginas.
-Eventos enviados ao dataLayer: gg_lead (obrigado), gg_contact (WhatsApp), gg_viewcontent (Instagram e localização).
+Eventos enviados ao dataLayer: gg_lead (obrigado ou WhatsApp flutuante), gg_contact (WhatsApp), gg_viewcontent (Instagram e localização).
 Não criar tag do Pixel da Meta no GTM: o pixel já está no código.
 
 6C. TINTIM

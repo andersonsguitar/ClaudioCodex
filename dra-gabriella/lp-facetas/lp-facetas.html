@@ -593,7 +593,12 @@ fbq('trackSingle',window.GG_PIXEL,'PageView');
   document.querySelectorAll('.gg [data-rede]').forEach(function(a){ a.addEventListener('click',function(){ fb('ViewContent',{content_name:a.dataset.rede}); }); });
   /* link rastreável do Tintim (LP Facetas), levando junto as UTMs do anúncio */
   var zb=document.getElementById('gg-zapbtn'); if(location.search) zb.href+=location.search;
-  document.getElementById('gg-zapbtn').addEventListener('click',function(){ fb('Contact',{content_name:'facetas_botao_flutuante'}); });
+  document.getElementById('gg-zapbtn').addEventListener('click',function(){
+    fb('Contact',{content_name:'facetas_botao_flutuante'});
+    /* clique no WhatsApp também conta como Lead, uma vez por visita (a mesma trava do obrigado, para não contar em dobro) */
+    var ss=null; try{ ss=sessionStorage; }catch(e){}
+    if(!ss || !ss.getItem('gg_lead_facetas')){ fb('Lead',{content_name:'facetas_whatsapp'}); try{ ss.setItem('gg_lead_facetas','1'); }catch(e){} }
+  });
 })();
 </script>
 <!-- ÍCONE DA ABA E TÍTULO: troca o ícone da Ideal pelo da Dra. só nesta página -->
