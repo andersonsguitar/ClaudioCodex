@@ -142,10 +142,7 @@
 .gg .depo-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px}
 .gg .depo-track::-webkit-scrollbar{display:none}
 .gg .depo{flex:0 0 100%;scroll-snap-align:start;background:var(--branco);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column;gap:22px;min-width:0}
-.gg .depo-track{align-items:center}
-.gg .depo-print{justify-content:center;align-items:center;padding:14px 12px 18px;gap:14px}
-.gg .depo-print img{width:100%;height:auto;border-radius:14px;display:block}
-.gg .depo-legenda{font-size:14px;color:var(--terra);text-align:center}
+
 .gg .depo blockquote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:22px;line-height:1.45;color:var(--cacau);margin:0}
 .gg .depo-quem{display:flex;align-items:center;flex-wrap:wrap;gap:12px 14px;margin-top:auto}
 .gg .depo-quem>div{min-width:0}
@@ -153,8 +150,6 @@
 .gg .depo-ini{display:flex;align-items:center;justify-content:center;background:var(--rose);color:var(--terra);font:500 18px 'Montserrat',sans-serif}
 .gg .depo-nome{font-weight:600;font-size:16px;line-height:1.3}
 .gg .depo-arroba{font-size:14px;color:var(--terra);overflow-wrap:anywhere}
-.gg .estrelas{display:flex;gap:3px;margin-left:auto}
-.gg .estrelas svg{width:16px;height:16px;fill:#B8924A}
 .gg .depo-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:26px}
 .gg .depo-ctrl button.seta{width:44px;height:44px;border-radius:50%;border:1px solid var(--terra);background:transparent;color:var(--cacau);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .gg .depo-ctrl button.seta svg{width:18px;height:18px}
@@ -219,7 +214,6 @@
   .gg details p{text-align:center;margin:0 auto}
   .gg .depo{align-items:center;text-align:center}
   .gg .depo-quem{flex-direction:column;justify-content:center;gap:8px}
-  .gg .estrelas{margin-left:0}
   .gg .form-box h2,.gg .form-box .intro{text-align:center}
   .gg .form-box .btn{margin-left:auto;margin-right:auto}
 }
@@ -326,24 +320,35 @@
           <figcaption class="depo-quem">
             <img src="https://idealmktdigital.com/wp-content/uploads/2026/09/gabriella-depo-patricia.webp" alt="Patricia Dias" width="240" height="240" loading="lazy">
             <div><p class="depo-nome">Patricia Dias</p><p class="depo-arroba">@patriciadiasoliveira6611</p></div>
-            <span class="estrelas" role="img" aria-label="5 estrelas"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
           </figcaption>
         </figure>
-        <figure class="depo depo-print">
-          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-1.webp" alt="Relato de paciente: Eu amei! Até minha mãe, que era contra porque achava que podia ficar parecendo tecla de piano, amou. Disse que foi o mais bonito que ela já viu na vida." width="852" height="312" loading="lazy">
-          <figcaption class="depo-legenda">Paciente de facetas em resina</figcaption>
+        <figure class="depo">
+          <blockquote>“Eu amei! Até minha mãe, que era contra porque achava que podia ficar parecendo tecla de piano, amou! Disse que foi o mais bonito que ela já viu na vida. E ela é super direta e sincera.”</blockquote>
+          <figcaption class="depo-quem">
+            <span class="depo-ini" aria-hidden="true">C</span>
+            <div><p class="depo-nome">Clarice</p><p class="depo-arroba">Facetas em resina</p></div>
+          </figcaption>
         </figure>
-        <figure class="depo depo-print">
-          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-2.webp" alt="Relato de paciente: Gabi, mais uma vez muito obrigada, você é perfeita e fez um trabalho maravilhoso na minha boca, não paro de me olhar no espelho." width="1140" height="492" loading="lazy">
-          <figcaption class="depo-legenda">Relato enviado pelo WhatsApp</figcaption>
+        <figure class="depo">
+          <blockquote>“Gabi, mais uma vez muito obrigada. Você é perfeita e fez um trabalho maravilhoso na minha boca, não paro de me olhar no espelho. ❤️”</blockquote>
+          <figcaption class="depo-quem">
+            <span class="depo-ini" aria-hidden="true">P</span>
+            <div><p class="depo-nome">Paciente</p><p class="depo-arroba">Relato pelo WhatsApp</p></div>
+          </figcaption>
         </figure>
-        <figure class="depo depo-print">
-          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-3.webp" alt="Relato de paciente: Só me arrependo de não ter feito antes. Obrigada por insistir e por ser tão maravilhosa no seu trabalho." width="1024" height="592" loading="lazy">
-          <figcaption class="depo-legenda">Relato enviado pelo WhatsApp</figcaption>
+        <figure class="depo">
+          <blockquote>“Só me arrependo de não ter feito antes. Obrigada por insistir e por ser tão maravilhosa no seu trabalho. 🥰”</blockquote>
+          <figcaption class="depo-quem">
+            <span class="depo-ini" aria-hidden="true">P</span>
+            <div><p class="depo-nome">Paciente</p><p class="depo-arroba">Relato pelo WhatsApp</p></div>
+          </figcaption>
         </figure>
-        <figure class="depo depo-print">
-          <img src="https://idealmktdigital.com/wp-content/uploads/2026/10/gabriella-depo-print-4.webp" alt="Comentário de paciente: Muito satisfeito, Gabi! Através do meu próprio caso, vi que eu não errei na previsão. Obrigado pela paciência, assistência e serviço prestado com excelência." width="624" height="308" loading="lazy">
-          <figcaption class="depo-legenda">Comentário no Instagram da Dra.</figcaption>
+        <figure class="depo">
+          <blockquote>“Muito satisfeito, Gabi! Me lembro que eu sempre dizia, desde o começo da sua graduação, que você iria ser uma excelente profissional pelo seu perfeccionismo, e hoje, através do meu próprio caso, vi que eu não errei na previsão. Obrigado pela paciência, assistência e serviço prestado com excelência.”</blockquote>
+          <figcaption class="depo-quem">
+            <span class="depo-ini" aria-hidden="true">S</span>
+            <div><p class="depo-nome">@segundinhot</p><p class="depo-arroba">Comentário no Instagram</p></div>
+          </figcaption>
         </figure>
       </div>
       <div class="depo-ctrl">
